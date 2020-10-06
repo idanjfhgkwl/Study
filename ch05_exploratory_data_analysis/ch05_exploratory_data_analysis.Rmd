@@ -353,7 +353,7 @@ ggplot(
 상자의 양끝에서 뻗어 나와 가장 멀리 떨어진 이상값이 아닌 점까지 이어진 선.
 </li>
 <br>
-![eda-boxplot](C:\Users\user\Desktop\BigDater\Review_R_edu\R_NCS_2020\markdown\img./eda-boxplot.png)
+![eda-boxplot](img/eda-boxplot.png)
 geom_boxplot()을 사용하여 컷팅에 따른 가격 분포
 
 ```{r}
