@@ -1,7 +1,6 @@
 ---
-title: "3장 데이터 변형"
-author: '43'
-date: '2020 9 30 '
+title: "ch05 Data transformation"
+author: 'JustY'
 output:
   html_document:
     toc: true

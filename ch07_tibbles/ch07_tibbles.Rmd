@@ -1,7 +1,6 @@
 ---
-title: "Ch08_tibble로하는티블"
-author: "bangilwoo"
-date: '2020 10 5 '
+title: "ch07 Tibbles"
+author: "JustY"
 output: html_document
 ---
 

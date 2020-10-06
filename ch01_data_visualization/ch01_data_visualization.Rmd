@@ -1,7 +1,6 @@
 ---
-title: "Data visualisation"
-author: "박신형"
-date: '2020 10 3 '
+title: "ch01 Data visualisation"
+author: "JustY"
 output: html_document
 ---
 
@@ -12,9 +11,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 # Chapter 1. 데이터 시각화
-
-Sin Hyung Park 
-10/5/2020
 
 > _"간단한 그래프는 데이터 분석가에게 다른 어떤 것보다도 많은 정보를 제공한다."_
 >

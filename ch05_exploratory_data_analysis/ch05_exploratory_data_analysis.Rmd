@@ -1,7 +1,6 @@
 ---
-title: "5장 탐색적 데이터 분석"
-author: "KIM DONG HO"
-date: '2020 10 05 '
+title: "ch05 Exploratory Data Analysis"
+author: "JustY"
 output: 
   html_document:
     toc: true

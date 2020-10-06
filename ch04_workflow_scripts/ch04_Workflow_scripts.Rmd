@@ -1,8 +1,6 @@
 ---
-
-title: "Chap4"
-author: "DJ"
-date: '2020 10 5 '
+title: "ch04 Workflow: scripts"
+author: "JustY"
 output:
   html_document:
     toc: true
