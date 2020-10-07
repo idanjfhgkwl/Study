@@ -198,14 +198,13 @@ flights %>%
    filter(n > 1)
 ```  
   
-+ 대체키(surrogate key)
-  테이블에 기본키가 없는 경우, mutate()와 row_number()로 기본키 추가  
++ 대체키(surrogate key)  
+  : 테이블에 기본키가 없는 경우, mutate()와 row_number()로 기본키 추가  
   
-+ 기본키와 외래키의 관계
++ 기본키와 외래키의 관계  
 대개 일대다(one-to-many) 관계: 각 항공편에는 여객기 하나, 각 여객기에는 여러 항공편  
 다대다(many-to-many): 다대일 관계와 일대다 관계를 사용하여 다대다 관계 모델링이 가능  
-ex) airline과 airport 간에 다대다 관계가 성립  
-    (각 항공사는 많은 공항으로 운행, 각 공항에는 많은 항공사 존재)  
+ex) airline과 airport 간에 다대다 관계가 성립 (각 항공사는 많은 공항으로 운행, 각 공항에는 많은 항공사 존재)    
 추가로, 일대일(1-to-1), 다대일(many-to-1) 관계도 있음
 
   
@@ -483,29 +482,29 @@ flights_locations %>%
 
 
 ### + 기타 구현  
-base::merge()는 4가지 유형의 뮤테이팅 조인을 수행할 수 있음
-[img14](./img/img14.png)  
+base::merge()는 4가지 유형의 뮤테이팅 조인을 수행할 수 있음  
+![img14](./img/img14.png){width="400"}  
 
 특정 dplyr 동사 장점은 코드 의도를 더 명확하게 전달하는 것
 -> 조인 간의 차이는 중요하지만 merge() 인수에 있음, dplyr 조인은 상당히 빠르고 행 순서를 어지럽히지 않음
 
-dplyr 규칙은 SQL에 기반하여 서로 옮겨쓰기 쉬움
-[img15](./img/img15.png)  
+dplyr 규칙은 SQL에 기반하여 서로 옮겨쓰기 쉬움  
+![img15](./img/img15.png){width="400"}  
+  
+inner 및 outer는 선택사항으로 종종 생략됨  
 
-inner 및 outer는 선택사항으로 종종 생략됨
-
-inner_join(x, y, by = c("a" = "b))처럼 테이블간 다른 변수를 결합할 때, SQL에서 약간 다르게 표현
+inner_join(x, y, by = c("a" = "b))처럼 테이블간 다른 변수를 결합할 때, SQL에서 약간 다르게 표현  
 SQL은 dplyr보다 넓은 조인 유형을 지원하며 등식이 아닌 다른 제약 조건으로도 테이블 연결이 가능(비동등 조인, non-equisjoin)  
 
 
-## 5. 필터링 조인
-필터링 조인은 뮤테이팅 조인과 같은 방식으로 관측값을 매칭함
-단, 변수가 아닌 관측값에 영향을 줌
+## 5. 필터링 조인  
+필터링 조인은 뮤테이팅 조인과 같은 방식으로 관측값을 매칭함  
+단, 변수가 아닌 관측값에 영향을 줌  
 ```
 - semi_join(x, y)는 y와 매치되는 x의 모든 관측값을 보존함
 - anti_join(x, y)는 y와 매치되는 x의 모든 관측값을 삭제함
-```
-semi_join은 필터링된 요약 테이블을 다시 원래 행과 매치시킬 때 유용
+```  
+semi_join은 필터링된 요약 테이블을 다시 원래 행과 매치시킬 때 유용  
 ex) 가장 인기 있는 상위 10개 도착지를 구했다고 가정  
 ```{r}
 top_dest <- flights %>%
@@ -529,7 +528,7 @@ flights %>%
    semi_join(top_dest) %>%
    print(n = 6, width = Inf)
 ```  
-![img11](./img/img11.png){width="400"} 
+![img11](./img/img11.png){width="400"}  
   
 매칭 여부만이 중요할 뿐, 어떤 관측값이 매칭되는지는 중요하지 않음  
 -> 뮤테이팅 조인처럼 행을 복제하지는 않음을 의미  
@@ -537,15 +536,15 @@ flights %>%
   
 anti_join은 semi_join의 반대이며, 매칭되지 않는 행을 보존함  
 ![img13](./img/img13.png){width="400"}   
-anti_join은 조인 불일치를 진단할 때 유용함
-ex) 항공편과 여객기를 연결하는 경우, 여객기에 매칭되지 않는 항공편이 많음을 알고 싶을 수 있음
+anti_join은 조인 불일치를 진단할 때 유용함  
+ex) 항공편과 여객기를 연결하는 경우, 여객기에 매칭되지 않는 항공편이 많음을 알고 싶을 수 있음  
 ```{r}
 flights %>%
    anti_join(planes, by = "tailnum") %>%
    count(tailnum, sort = TRUE)
 ```
 
-### + 연습문제
+### + 연습문제  
 1. 공편에 tailnum이 없는 것은 무엇을 의미하는가?  
 planes에 매치되는 관측값이 없는 tailnum 관측값들의 공통점은 무엇인가?  
 hint: 한 변수가 문제의 약 90%를 설명  
@@ -565,7 +564,7 @@ flights %>%
    mutate(p = n / sum(n))
 ```
 
-그러나, 모든 flights의 tail numbers가 planes 테이블에서 사라진 것은 아니다. 불일치를 조정하여야 한다.  
+그러나, 모든 flights의 tail numbers가 planes 테이블에서 사라진 것은 아니다.   불일치를 조정하여야 한다.  
 ```{r}
 flights %>%
   distinct(carrier, tailnum) %>%
@@ -577,9 +576,9 @@ flights %>%
   arrange(desc(missing_pct))
 ```  
 
-2. filghts를 필터링하여 최소 100편을 운행한 여객기의 항공편만 표시하라.
+2. filghts를 필터링하여 최소 100편을 운행한 여객기의 항공편만 표시하라.  
 
-1st. 최소 100번 운행한 비행기 중, 유효한 비행기 모두 찾기
+1st. 최소 100번 운행한 비행기 중, 유효한 비행기 모두 찾기  
 ```{r}
 planes_100flights <- flights %>%
    filter(!is.na(tailnum)) %>%
@@ -589,13 +588,13 @@ planes_100flights <- flights %>%
 
 planes_100flights
 ```  
-
-2nd. semi_join을 이용해서 원래 행과 매칭시키기
+  
+2nd. semi_join을 이용해서 원래 행과 매칭시키기  
 ```{r}
 flights %>%
   semi_join(planes_100flights, by = "tailnum")
 ```  
-
+  
 3. fueleconomy::vehicles와 fueleconomy::common을 조인하여 가장 많은 차량 모델의 레코드만 찾아라.  
 ```{r}
 fueleconomy::vehicles %>%
@@ -617,18 +616,18 @@ fueleconomy::common %>%
 ```  
 
 4. 1년 중 가장 지연된 48시간을 찾아, 날씨 데이터와 교차 참조하라.  
-어떤 패턴을 볼 수 있는가?
+어떤 패턴을 볼 수 있는가?  
 
 
 5. anti_join(flights, airports, by = c("dest" = "faa"))를 보고 무엇을 알 수 있는가?  
-anti_join(airports, flights, by - c("faa" = "dest"))는 어떤가?
+anti_join(airports, flights, by - c("faa" = "dest"))는 어떤가?  
 
 
-6. 각 항공기는 단일 항공사가 운항하므로 항공기와 항공사 간 암묵적인 관계를 예상할 수 있다. 이전 절에서 배운 도구로 가설을 확인하거나 기각하라.
+6. 각 항공기는 단일 항공사가 운항하므로 항공기와 항공사 간 암묵적인 관계를 예상할 수 있다. 이전 절에서 배운 도구로 가설을 확인하거나 기각하라.  
 
 
-## 6. 조인 문제
-현재 공부한 데이터는 정제된 데이터로 문제가 발생하지 않았으나, 실제로 작업할 데이터는 문제가 많을 수 있음
+## 6. 조인 문제  
+현재 공부한 데이터는 정제된 데이터로 문제가 발생하지 않았으나, 실제로 작업할 데이터는 문제가 많을 수 있음  
 
 
 * 데이터 확인 시, 수행할 것  
@@ -640,23 +639,23 @@ airports %>% count(alt, lon) %>% filter(n > 1)
 ```
 
 2) 기본키 변수에 결측값이 없는지 확인하기  
-   : 값이 결측된 경우에는 관측값을 식별할 수 없음
+   : 값이 결측된 경우에는 관측값을 식별할 수 없음  
 
-3) 외래키가 다른 테이블의 기본키와 매칭되는지 확인하기
-   : anti_join을 사용하는 것이 가장 좋은 방법
+3) 외래키가 다른 테이블의 기본키와 매칭되는지 확인하기  
+   : anti_join을 사용하는 것이 가장 좋은 방법  
 
   
 ## 7. 집합 연산  
 복잡한 필터를 단순한 필터를로 분해하려는 경우에 종종 사용  
-행 전체에 동작하면서 모든 변수의 값을 비교함
-x와 y 입력이 같은 변수를 가진다고 간주하며 관측값을 집합으로 취급
+행 전체에 동작하면서 모든 변수의 값을 비교함  
+x와 y 입력이 같은 변수를 가진다고 간주하며 관측값을 집합으로 취급  
 
 ```
 - intersect(x, y): x, y 모두에 있는 관측값만 반환
 - union(x, y): x와 y의 고유한 관측값을 반환
 - setdiff(x, y):x에 있지만, y에는 없는 관측값을 반환
 ```
-  
+   
 ex) 간단한 데이터로 살펴보기  
 ```{r}
 df1 <- tribble(

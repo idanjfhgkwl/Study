@@ -12,7 +12,7 @@
 <meta name="author" content="JustY" />
 
 
-<title>ch09 Tidy data</title>
+<title>ch08 Data import</title>
 
 <script>/*! jQuery v1.11.3 | (c) 2005, 2015 jQuery Foundation, Inc. | jquery.org/license */
 !function(a,b){"object"==typeof module&&"object"==typeof module.exports?module.exports=a.document?b(a,!0):function(a){if(!a.document)throw new Error("jQuery requires a window with a document");return b(a)}:b(a)}("undefined"!=typeof window?window:this,function(a,b){var c=[],d=c.slice,e=c.concat,f=c.push,g=c.indexOf,h={},i=h.toString,j=h.hasOwnProperty,k={},l="1.11.3",m=function(a,b){return new m.fn.init(a,b)},n=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,o=/^-ms-/,p=/-([\da-z])/gi,q=function(a,b){return b.toUpperCase()};m.fn=m.prototype={jquery:l,constructor:m,selector:"",length:0,toArray:function(){return d.call(this)},get:function(a){return null!=a?0>a?this[a+this.length]:this[a]:d.call(this)},pushStack:function(a){var b=m.merge(this.constructor(),a);return b.prevObject=this,b.context=this.context,b},each:function(a,b){return m.each(this,a,b)},map:function(a){return this.pushStack(m.map(this,function(b,c){return a.call(b,c,b)}))},slice:function(){return this.pushStack(d.apply(this,arguments))},first:function(){return this.eq(0)},last:function(){return this.eq(-1)},eq:function(a){var b=this.length,c=+a+(0>a?b:0);return this.pushStack(c>=0&&b>c?[this[c]]:[])},end:function(){return this.prevObject||this.constructor(null)},push:f,sort:c.sort,splice:c.splice},m.extend=m.fn.extend=function(){var a,b,c,d,e,f,g=arguments[0]||{},h=1,i=arguments.length,j=!1;for("boolean"==typeof g&&(j=g,g=arguments[h]||{},h++),"object"==typeof g||m.isFunction(g)||(g={}),h===i&&(g=this,h--);i>h;h++)if(null!=(e=arguments[h]))for(d in e)a=g[d],c=e[d],g!==c&&(j&&c&&(m.isPlainObject(c)||(b=m.isArray(c)))?(b?(b=!1,f=a&&m.isArray(a)?a:[]):f=a&&m.isPlainObject(a)?a:{},g[d]=m.extend(j,f,c)):void 0!==c&&(g[d]=c));return g},m.extend({expando:"jQuery"+(l+Math.random()).replace(/\D/g,""),isReady:!0,error:function(a){throw new Error(a)},noop:function(){},isFunction:function(a){return"function"===m.type(a)},isArray:Array.isArray||function(a){return"array"===m.type(a)},isWindow:function(a){return null!=a&&a==a.window},isNumeric:function(a){return!m.isArray(a)&&a-parseFloat(a)+1>=0},isEmptyObject:function(a){var b;for(b in a)return!1;return!0},isPlainObject:function(a){var b;if(!a||"object"!==m.type(a)||a.nodeType||m.isWindow(a))return!1;try{if(a.constructor&&!j.call(a,"constructor")&&!j.call(a.constructor.prototype,"isPrototypeOf"))return!1}catch(c){return!1}if(k.ownLast)for(b in a)return j.call(a,b);for(b in a);return void 0===b||j.call(a,b)},type:function(a){return null==a?a+"":"object"==typeof a||"function"==typeof a?h[i.call(a)]||"object":typeof a},globalEval:function(b){b&&m.trim(b)&&(a.execScript||function(b){a.eval.call(a,b)})(b)},camelCase:function(a){return a.replace(o,"ms-").replace(p,q)},nodeName:function(a,b){return a.nodeName&&a.nodeName.toLowerCase()===b.toLowerCase()},each:function(a,b,c){var d,e=0,f=a.length,g=r(a);if(c){if(g){for(;f>e;e++)if(d=b.apply(a[e],c),d===!1)break}else for(e in a)if(d=b.apply(a[e],c),d===!1)break}else if(g){for(;f>e;e++)if(d=b.call(a[e],e,a[e]),d===!1)break}else for(e in a)if(d=b.call(a[e],e,a[e]),d===!1)break;return a},trim:function(a){return null==a?"":(a+"").replace(n,"")},makeArray:function(a,b){var c=b||[];return null!=a&&(r(Object(a))?m.merge(c,"string"==typeof a?[a]:a):f.call(c,a)),c},inArray:function(a,b,c){var d;if(b){if(g)return g.call(b,a,c);for(d=b.length,c=c?0>c?Math.max(0,d+c):c:0;d>c;c++)if(c in b&&b[c]===a)return c}return-1},merge:function(a,b){var c=+b.length,d=0,e=a.length;while(c>d)a[e++]=b[d++];if(c!==c)while(void 0!==b[d])a[e++]=b[d++];return a.length=e,a},grep:function(a,b,c){for(var d,e=[],f=0,g=a.length,h=!c;g>f;f++)d=!b(a[f],f),d!==h&&e.push(a[f]);return e},map:function(a,b,c){var d,f=0,g=a.length,h=r(a),i=[];if(h)for(;g>f;f++)d=b(a[f],f,c),null!=d&&i.push(d);else for(f in a)d=b(a[f],f,c),null!=d&&i.push(d);return e.apply([],i)},guid:1,proxy:function(a,b){var c,e,f;return"string"==typeof b&&(f=a[b],b=a,a=f),m.isFunction(a)?(c=d.call(arguments,2),e=function(){return a.apply(b||this,c.concat(d.call(arguments)))},e.guid=a.guid=a.guid||m.guid++,e):void 0},now:function(){return+new Date},support:k}),m.each("Boolean Number String Function Array Date RegExp Object Error".split(" "),function(a,b){h["[object "+b+"]"]=b.toLowerCase()});function r(a){var b="length"in a&&a.length,c=m.type(a);return"function"===c||m.isWindow(a)?!1:1===a.nodeType&&b?!0:"array"===c||0===b||"number"==typeof b&&b>0&&b-1 in a}var s=function(a){var b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u="sizzle"+1*new Date,v=a.document,w=0,x=0,y=ha(),z=ha(),A=ha(),B=function(a,b){return a===b&&(l=!0),0},C=1<<31,D={}.hasOwnProperty,E=[],F=E.pop,G=E.push,H=E.push,I=E.slice,J=function(a,b){for(var c=0,d=a.length;d>c;c++)if(a[c]===b)return c;return-1},K="checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",L="[\\x20\\t\\r\\n\\f]",M="(?:\\\\.|[\\w-]|[^\\x00-\\xa0])+",N=M.replace("w","w#"),O="\\["+L+"*("+M+")(?:"+L+"*([*^$|!~]?=)"+L+"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|("+N+"))|)"+L+"*\\]",P=":("+M+")(?:\\((('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|((?:\\\\.|[^\\\\()[\\]]|"+O+")*)|.*)\\)|)",Q=new RegExp(L+"+","g"),R=new RegExp("^"+L+"+|((?:^|[^\\\\])(?:\\\\.)*)"+L+"+$","g"),S=new RegExp("^"+L+"*,"+L+"*"),T=new RegExp("^"+L+"*([>+~]|"+L+")"+L+"*"),U=new RegExp("="+L+"*([^\\]'\"]*?)"+L+"*\\]","g"),V=new RegExp(P),W=new RegExp("^"+N+"$"),X={ID:new RegExp("^#("+M+")"),CLASS:new RegExp("^\\.("+M+")"),TAG:new RegExp("^("+M.replace("w","w*")+")"),ATTR:new RegExp("^"+O),PSEUDO:new RegExp("^"+P),CHILD:new RegExp("^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\("+L+"*(even|odd|(([+-]|)(\\d*)n|)"+L+"*(?:([+-]|)"+L+"*(\\d+)|))"+L+"*\\)|)","i"),bool:new RegExp("^(?:"+K+")$","i"),needsContext:new RegExp("^"+L+"*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\("+L+"*((?:-\\d)?\\d*)"+L+"*\\)|)(?=[^-]|$)","i")},Y=/^(?:input|select|textarea|button)$/i,Z=/^h\d$/i,$=/^[^{]+\{\s*\[native \w/,_=/^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,aa=/[+~]/,ba=/'|\\/g,ca=new RegExp("\\\\([\\da-f]{1,6}"+L+"?|("+L+")|.)","ig"),da=function(a,b,c){var d="0x"+b-65536;return d!==d||c?b:0>d?String.fromCharCode(d+65536):String.fromCharCode(d>>10|55296,1023&d|56320)},ea=function(){m()};try{H.apply(E=I.call(v.childNodes),v.childNodes),E[v.childNodes.length].nodeType}catch(fa){H={apply:E.length?function(a,b){G.apply(a,I.call(b))}:function(a,b){var c=a.length,d=0;while(a[c++]=b[d++]);a.length=c-1}}}function ga(a,b,d,e){var f,h,j,k,l,o,r,s,w,x;if((b?b.ownerDocument||b:v)!==n&&m(b),b=b||n,d=d||[],k=b.nodeType,"string"!=typeof a||!a||1!==k&&9!==k&&11!==k)return d;if(!e&&p){if(11!==k&&(f=_.exec(a)))if(j=f[1]){if(9===k){if(h=b.getElementById(j),!h||!h.parentNode)return d;if(h.id===j)return d.push(h),d}else if(b.ownerDocument&&(h=b.ownerDocument.getElementById(j))&&t(b,h)&&h.id===j)return d.push(h),d}else{if(f[2])return H.apply(d,b.getElementsByTagName(a)),d;if((j=f[3])&&c.getElementsByClassName)return H.apply(d,b.getElementsByClassName(j)),d}if(c.qsa&&(!q||!q.test(a))){if(s=r=u,w=b,x=1!==k&&a,1===k&&"object"!==b.nodeName.toLowerCase()){o=g(a),(r=b.getAttribute("id"))?s=r.replace(ba,"\\$&"):b.setAttribute("id",s),s="[id='"+s+"'] ",l=o.length;while(l--)o[l]=s+ra(o[l]);w=aa.test(a)&&pa(b.parentNode)||b,x=o.join(",")}if(x)try{return H.apply(d,w.querySelectorAll(x)),d}catch(y){}finally{r||b.removeAttribute("id")}}}return i(a.replace(R,"$1"),b,d,e)}function ha(){var a=[];function b(c,e){return a.push(c+" ")>d.cacheLength&&delete b[a.shift()],b[c+" "]=e}return b}function ia(a){return a[u]=!0,a}function ja(a){var b=n.createElement("div");try{return!!a(b)}catch(c){return!1}finally{b.parentNode&&b.parentNode.removeChild(b),b=null}}function ka(a,b){var c=a.split("|"),e=a.length;while(e--)d.attrHandle[c[e]]=b}function la(a,b){var c=b&&a,d=c&&1===a.nodeType&&1===b.nodeType&&(~b.sourceIndex||C)-(~a.sourceIndex||C);if(d)return d;if(c)while(c=c.nextSibling)if(c===b)return-1;return a?1:-1}function ma(a){return function(b){var c=b.nodeName.toLowerCase();return"input"===c&&b.type===a}}function na(a){return function(b){var c=b.nodeName.toLowerCase();return("input"===c||"button"===c)&&b.type===a}}function oa(a){return ia(function(b){return b=+b,ia(function(c,d){var e,f=a([],c.length,b),g=f.length;while(g--)c[e=f[g]]&&(c[e]=!(d[e]=c[e]))})})}function pa(a){return a&&"undefined"!=typeof a.getElementsByTagName&&a}c=ga.support={},f=ga.isXML=function(a){var b=a&&(a.ownerDocument||a).documentElement;return b?"HTML"!==b.nodeName:!1},m=ga.setDocument=function(a){var b,e,g=a?a.ownerDocument||a:v;return g!==n&&9===g.nodeType&&g.documentElement?(n=g,o=g.documentElement,e=g.defaultView,e&&e!==e.top&&(e.addEventListener?e.addEventListener("unload",ea,!1):e.attachEvent&&e.attachEvent("onunload",ea)),p=!f(g),c.attributes=ja(function(a){return a.className="i",!a.getAttribute("className")}),c.getElementsByTagName=ja(function(a){return a.appendChild(g.createComment("")),!a.getElementsByTagName("*").length}),c.getElementsByClassName=$.test(g.getElementsByClassName),c.getById=ja(function(a){return o.appendChild(a).id=u,!g.getElementsByName||!g.getElementsByName(u).length}),c.getById?(d.find.ID=function(a,b){if("undefined"!=typeof b.getElementById&&p){var c=b.getElementById(a);return c&&c.parentNode?[c]:[]}},d.filter.ID=function(a){var b=a.replace(ca,da);return function(a){return a.getAttribute("id")===b}}):(delete d.find.ID,d.filter.ID=function(a){var b=a.replace(ca,da);return function(a){var c="undefined"!=typeof a.getAttributeNode&&a.getAttributeNode("id");return c&&c.value===b}}),d.find.TAG=c.getElementsByTagName?function(a,b){return"undefined"!=typeof b.getElementsByTagName?b.getElementsByTagName(a):c.qsa?b.querySelectorAll(a):void 0}:function(a,b){var c,d=[],e=0,f=b.getElementsByTagName(a);if("*"===a){while(c=f[e++])1===c.nodeType&&d.push(c);return d}return f},d.find.CLASS=c.getElementsByClassName&&function(a,b){return p?b.getElementsByClassName(a):void 0},r=[],q=[],(c.qsa=$.test(g.querySelectorAll))&&(ja(function(a){o.appendChild(a).innerHTML="<a id='"+u+"'></a><select id='"+u+"-\f]' msallowcapture=''><option selected=''></option></select>",a.querySelectorAll("[msallowcapture^='']").length&&q.push("[*^$]="+L+"*(?:''|\"\")"),a.querySelectorAll("[selected]").length||q.push("\\["+L+"*(?:value|"+K+")"),a.querySelectorAll("[id~="+u+"-]").length||q.push("~="),a.querySelectorAll(":checked").length||q.push(":checked"),a.querySelectorAll("a#"+u+"+*").length||q.push(".#.+[+~]")}),ja(function(a){var b=g.createElement("input");b.setAttribute("type","hidden"),a.appendChild(b).setAttribute("name","D"),a.querySelectorAll("[name=d]").length&&q.push("name"+L+"*[*^$|!~]?="),a.querySelectorAll(":enabled").length||q.push(":enabled",":disabled"),a.querySelectorAll("*,:x"),q.push(",.*:")})),(c.matchesSelector=$.test(s=o.matches||o.webkitMatchesSelector||o.mozMatchesSelector||o.oMatchesSelector||o.msMatchesSelector))&&ja(function(a){c.disconnectedMatch=s.call(a,"div"),s.call(a,"[s!='']:x"),r.push("!=",P)}),q=q.length&&new RegExp(q.join("|")),r=r.length&&new RegExp(r.join("|")),b=$.test(o.compareDocumentPosition),t=b||$.test(o.contains)?function(a,b){var c=9===a.nodeType?a.documentElement:a,d=b&&b.parentNode;return a===d||!(!d||1!==d.nodeType||!(c.contains?c.contains(d):a.compareDocumentPosition&&16&a.compareDocumentPosition(d)))}:function(a,b){if(b)while(b=b.parentNode)if(b===a)return!0;return!1},B=b?function(a,b){if(a===b)return l=!0,0;var d=!a.compareDocumentPosition-!b.compareDocumentPosition;return d?d:(d=(a.ownerDocument||a)===(b.ownerDocument||b)?a.compareDocumentPosition(b):1,1&d||!c.sortDetached&&b.compareDocumentPosition(a)===d?a===g||a.ownerDocument===v&&t(v,a)?-1:b===g||b.ownerDocument===v&&t(v,b)?1:k?J(k,a)-J(k,b):0:4&d?-1:1)}:function(a,b){if(a===b)return l=!0,0;var c,d=0,e=a.parentNode,f=b.parentNode,h=[a],i=[b];if(!e||!f)return a===g?-1:b===g?1:e?-1:f?1:k?J(k,a)-J(k,b):0;if(e===f)return la(a,b);c=a;while(c=c.parentNode)h.unshift(c);c=b;while(c=c.parentNode)i.unshift(c);while(h[d]===i[d])d++;return d?la(h[d],i[d]):h[d]===v?-1:i[d]===v?1:0},g):n},ga.matches=function(a,b){return ga(a,null,null,b)},ga.matchesSelector=function(a,b){if((a.ownerDocument||a)!==n&&m(a),b=b.replace(U,"='$1']"),!(!c.matchesSelector||!p||r&&r.test(b)||q&&q.test(b)))try{var d=s.call(a,b);if(d||c.disconnectedMatch||a.document&&11!==a.document.nodeType)return d}catch(e){}return ga(b,n,null,[a]).length>0},ga.contains=function(a,b){return(a.ownerDocument||a)!==n&&m(a),t(a,b)},ga.attr=function(a,b){(a.ownerDocument||a)!==n&&m(a);var e=d.attrHandle[b.toLowerCase()],f=e&&D.call(d.attrHandle,b.toLowerCase())?e(a,b,!p):void 0;return void 0!==f?f:c.attributes||!p?a.getAttribute(b):(f=a.getAttributeNode(b))&&f.specified?f.value:null},ga.error=function(a){throw new Error("Syntax error, unrecognized expression: "+a)},ga.uniqueSort=function(a){var b,d=[],e=0,f=0;if(l=!c.detectDuplicates,k=!c.sortStable&&a.slice(0),a.sort(B),l){while(b=a[f++])b===a[f]&&(e=d.push(f));while(e--)a.splice(d[e],1)}return k=null,a},e=ga.getText=function(a){var b,c="",d=0,f=a.nodeType;if(f){if(1===f||9===f||11===f){if("string"==typeof a.textContent)return a.textContent;for(a=a.firstChild;a;a=a.nextSibling)c+=e(a)}else if(3===f||4===f)return a.nodeValue}else while(b=a[d++])c+=e(b);return c},d=ga.selectors={cacheLength:50,createPseudo:ia,match:X,attrHandle:{},find:{},relative:{">":{dir:"parentNode",first:!0}," ":{dir:"parentNode"},"+":{dir:"previousSibling",first:!0},"~":{dir:"previousSibling"}},preFilter:{ATTR:function(a){return a[1]=a[1].replace(ca,da),a[3]=(a[3]||a[4]||a[5]||"").replace(ca,da),"~="===a[2]&&(a[3]=" "+a[3]+" "),a.slice(0,4)},CHILD:function(a){return a[1]=a[1].toLowerCase(),"nth"===a[1].slice(0,3)?(a[3]||ga.error(a[0]),a[4]=+(a[4]?a[5]+(a[6]||1):2*("even"===a[3]||"odd"===a[3])),a[5]=+(a[7]+a[8]||"odd"===a[3])):a[3]&&ga.error(a[0]),a},PSEUDO:function(a){var b,c=!a[6]&&a[2];return X.CHILD.test(a[0])?null:(a[3]?a[2]=a[4]||a[5]||"":c&&V.test(c)&&(b=g(c,!0))&&(b=c.indexOf(")",c.length-b)-c.length)&&(a[0]=a[0].slice(0,b),a[2]=c.slice(0,b)),a.slice(0,3))}},filter:{TAG:function(a){var b=a.replace(ca,da).toLowerCase();return"*"===a?function(){return!0}:function(a){return a.nodeName&&a.nodeName.toLowerCase()===b}},CLASS:function(a){var b=y[a+" "];return b||(b=new RegExp("(^|"+L+")"+a+"("+L+"|$)"))&&y(a,function(a){return b.test("string"==typeof a.className&&a.className||"undefined"!=typeof a.getAttribute&&a.getAttribute("class")||"")})},ATTR:function(a,b,c){return function(d){var e=ga.attr(d,a);return null==e?"!="===b:b?(e+="","="===b?e===c:"!="===b?e!==c:"^="===b?c&&0===e.indexOf(c):"*="===b?c&&e.indexOf(c)>-1:"$="===b?c&&e.slice(-c.length)===c:"~="===b?(" "+e.replace(Q," ")+" ").indexOf(c)>-1:"|="===b?e===c||e.slice(0,c.length+1)===c+"-":!1):!0}},CHILD:function(a,b,c,d,e){var f="nth"!==a.slice(0,3),g="last"!==a.slice(-4),h="of-type"===b;return 1===d&&0===e?function(a){return!!a.parentNode}:function(b,c,i){var j,k,l,m,n,o,p=f!==g?"nextSibling":"previousSibling",q=b.parentNode,r=h&&b.nodeName.toLowerCase(),s=!i&&!h;if(q){if(f){while(p){l=b;while(l=l[p])if(h?l.nodeName.toLowerCase()===r:1===l.nodeType)return!1;o=p="only"===a&&!o&&"nextSibling"}return!0}if(o=[g?q.firstChild:q.lastChild],g&&s){k=q[u]||(q[u]={}),j=k[a]||[],n=j[0]===w&&j[1],m=j[0]===w&&j[2],l=n&&q.childNodes[n];while(l=++n&&l&&l[p]||(m=n=0)||o.pop())if(1===l.nodeType&&++m&&l===b){k[a]=[w,n,m];break}}else if(s&&(j=(b[u]||(b[u]={}))[a])&&j[0]===w)m=j[1];else while(l=++n&&l&&l[p]||(m=n=0)||o.pop())if((h?l.nodeName.toLowerCase()===r:1===l.nodeType)&&++m&&(s&&((l[u]||(l[u]={}))[a]=[w,m]),l===b))break;return m-=e,m===d||m%d===0&&m/d>=0}}},PSEUDO:function(a,b){var c,e=d.pseudos[a]||d.setFilters[a.toLowerCase()]||ga.error("unsupported pseudo: "+a);return e[u]?e(b):e.length>1?(c=[a,a,"",b],d.setFilters.hasOwnProperty(a.toLowerCase())?ia(function(a,c){var d,f=e(a,b),g=f.length;while(g--)d=J(a,f[g]),a[d]=!(c[d]=f[g])}):function(a){return e(a,0,c)}):e}},pseudos:{not:ia(function(a){var b=[],c=[],d=h(a.replace(R,"$1"));return d[u]?ia(function(a,b,c,e){var f,g=d(a,null,e,[]),h=a.length;while(h--)(f=g[h])&&(a[h]=!(b[h]=f))}):function(a,e,f){return b[0]=a,d(b,null,f,c),b[0]=null,!c.pop()}}),has:ia(function(a){return function(b){return ga(a,b).length>0}}),contains:ia(function(a){return a=a.replace(ca,da),function(b){return(b.textContent||b.innerText||e(b)).indexOf(a)>-1}}),lang:ia(function(a){return W.test(a||"")||ga.error("unsupported lang: "+a),a=a.replace(ca,da).toLowerCase(),function(b){var c;do if(c=p?b.lang:b.getAttribute("xml:lang")||b.getAttribute("lang"))return c=c.toLowerCase(),c===a||0===c.indexOf(a+"-");while((b=b.parentNode)&&1===b.nodeType);return!1}}),target:function(b){var c=a.location&&a.location.hash;return c&&c.slice(1)===b.id},root:function(a){return a===o},focus:function(a){return a===n.activeElement&&(!n.hasFocus||n.hasFocus())&&!!(a.type||a.href||~a.tabIndex)},enabled:function(a){return a.disabled===!1},disabled:function(a){return a.disabled===!0},checked:function(a){var b=a.nodeName.toLowerCase();return"input"===b&&!!a.checked||"option"===b&&!!a.selected},selected:function(a){return a.parentNode&&a.parentNode.selectedIndex,a.selected===!0},empty:function(a){for(a=a.firstChild;a;a=a.nextSibling)if(a.nodeType<6)return!1;return!0},parent:function(a){return!d.pseudos.empty(a)},header:function(a){return Z.test(a.nodeName)},input:function(a){return Y.test(a.nodeName)},button:function(a){var b=a.nodeName.toLowerCase();return"input"===b&&"button"===a.type||"button"===b},text:function(a){var b;return"input"===a.nodeName.toLowerCase()&&"text"===a.type&&(null==(b=a.getAttribute("type"))||"text"===b.toLowerCase())},first:oa(function(){return[0]}),last:oa(function(a,b){return[b-1]}),eq:oa(function(a,b,c){return[0>c?c+b:c]}),even:oa(function(a,b){for(var c=0;b>c;c+=2)a.push(c);return a}),odd:oa(function(a,b){for(var c=1;b>c;c+=2)a.push(c);return a}),lt:oa(function(a,b,c){for(var d=0>c?c+b:c;--d>=0;)a.push(d);return a}),gt:oa(function(a,b,c){for(var d=0>c?c+b:c;++d<b;)a.push(d);return a})}},d.pseudos.nth=d.pseudos.eq;for(b in{radio:!0,checkbox:!0,file:!0,password:!0,image:!0})d.pseudos[b]=ma(b);for(b in{submit:!0,reset:!0})d.pseudos[b]=na(b);function qa(){}qa.prototype=d.filters=d.pseudos,d.setFilters=new qa,g=ga.tokenize=function(a,b){var c,e,f,g,h,i,j,k=z[a+" "];if(k)return b?0:k.slice(0);h=a,i=[],j=d.preFilter;while(h){(!c||(e=S.exec(h)))&&(e&&(h=h.slice(e[0].length)||h),i.push(f=[])),c=!1,(e=T.exec(h))&&(c=e.shift(),f.push({value:c,type:e[0].replace(R," ")}),h=h.slice(c.length));for(g in d.filter)!(e=X[g].exec(h))||j[g]&&!(e=j[g](e))||(c=e.shift(),f.push({value:c,type:g,matches:e}),h=h.slice(c.length));if(!c)break}return b?h.length:h?ga.error(a):z(a,i).slice(0)};function ra(a){for(var b=0,c=a.length,d="";c>b;b++)d+=a[b].value;return d}function sa(a,b,c){var d=b.dir,e=c&&"parentNode"===d,f=x++;return b.first?function(b,c,f){while(b=b[d])if(1===b.nodeType||e)return a(b,c,f)}:function(b,c,g){var h,i,j=[w,f];if(g){while(b=b[d])if((1===b.nodeType||e)&&a(b,c,g))return!0}else while(b=b[d])if(1===b.nodeType||e){if(i=b[u]||(b[u]={}),(h=i[d])&&h[0]===w&&h[1]===f)return j[2]=h[2];if(i[d]=j,j[2]=a(b,c,g))return!0}}}function ta(a){return a.length>1?function(b,c,d){var e=a.length;while(e--)if(!a[e](b,c,d))return!1;return!0}:a[0]}function ua(a,b,c){for(var d=0,e=b.length;e>d;d++)ga(a,b[d],c);return c}function va(a,b,c,d,e){for(var f,g=[],h=0,i=a.length,j=null!=b;i>h;h++)(f=a[h])&&(!c||c(f,d,e))&&(g.push(f),j&&b.push(h));return g}function wa(a,b,c,d,e,f){return d&&!d[u]&&(d=wa(d)),e&&!e[u]&&(e=wa(e,f)),ia(function(f,g,h,i){var j,k,l,m=[],n=[],o=g.length,p=f||ua(b||"*",h.nodeType?[h]:h,[]),q=!a||!f&&b?p:va(p,m,a,h,i),r=c?e||(f?a:o||d)?[]:g:q;if(c&&c(q,r,h,i),d){j=va(r,n),d(j,[],h,i),k=j.length;while(k--)(l=j[k])&&(r[n[k]]=!(q[n[k]]=l))}if(f){if(e||a){if(e){j=[],k=r.length;while(k--)(l=r[k])&&j.push(q[k]=l);e(null,r=[],j,i)}k=r.length;while(k--)(l=r[k])&&(j=e?J(f,l):m[k])>-1&&(f[j]=!(g[j]=l))}}else r=va(r===g?r.splice(o,r.length):r),e?e(null,g,r,i):H.apply(g,r)})}function xa(a){for(var b,c,e,f=a.length,g=d.relative[a[0].type],h=g||d.relative[" "],i=g?1:0,k=sa(function(a){return a===b},h,!0),l=sa(function(a){return J(b,a)>-1},h,!0),m=[function(a,c,d){var e=!g&&(d||c!==j)||((b=c).nodeType?k(a,c,d):l(a,c,d));return b=null,e}];f>i;i++)if(c=d.relative[a[i].type])m=[sa(ta(m),c)];else{if(c=d.filter[a[i].type].apply(null,a[i].matches),c[u]){for(e=++i;f>e;e++)if(d.relative[a[e].type])break;return wa(i>1&&ta(m),i>1&&ra(a.slice(0,i-1).concat({value:" "===a[i-2].type?"*":""})).replace(R,"$1"),c,e>i&&xa(a.slice(i,e)),f>e&&xa(a=a.slice(e)),f>e&&ra(a))}m.push(c)}return ta(m)}function ya(a,b){var c=b.length>0,e=a.length>0,f=function(f,g,h,i,k){var l,m,o,p=0,q="0",r=f&&[],s=[],t=j,u=f||e&&d.find.TAG("*",k),v=w+=null==t?1:Math.random()||.1,x=u.length;for(k&&(j=g!==n&&g);q!==x&&null!=(l=u[q]);q++){if(e&&l){m=0;while(o=a[m++])if(o(l,g,h)){i.push(l);break}k&&(w=v)}c&&((l=!o&&l)&&p--,f&&r.push(l))}if(p+=q,c&&q!==p){m=0;while(o=b[m++])o(r,s,g,h);if(f){if(p>0)while(q--)r[q]||s[q]||(s[q]=F.call(i));s=va(s)}H.apply(i,s),k&&!f&&s.length>0&&p+b.length>1&&ga.uniqueSort(i)}return k&&(w=v,j=t),r};return c?ia(f):f}return h=ga.compile=function(a,b){var c,d=[],e=[],f=A[a+" "];if(!f){b||(b=g(a)),c=b.length;while(c--)f=xa(b[c]),f[u]?d.push(f):e.push(f);f=A(a,ya(e,d)),f.selector=a}return f},i=ga.select=function(a,b,e,f){var i,j,k,l,m,n="function"==typeof a&&a,o=!f&&g(a=n.selector||a);if(e=e||[],1===o.length){if(j=o[0]=o[0].slice(0),j.length>2&&"ID"===(k=j[0]).type&&c.getById&&9===b.nodeType&&p&&d.relative[j[1].type]){if(b=(d.find.ID(k.matches[0].replace(ca,da),b)||[])[0],!b)return e;n&&(b=b.parentNode),a=a.slice(j.shift().value.length)}i=X.needsContext.test(a)?0:j.length;while(i--){if(k=j[i],d.relative[l=k.type])break;if((m=d.find[l])&&(f=m(k.matches[0].replace(ca,da),aa.test(j[0].type)&&pa(b.parentNode)||b))){if(j.splice(i,1),a=f.length&&ra(j),!a)return H.apply(e,f),e;break}}}return(n||h(a,o))(f,b,!p,e,aa.test(a)&&pa(b.parentNode)||b),e},c.sortStable=u.split("").sort(B).join("")===u,c.detectDuplicates=!!l,m(),c.sortDetached=ja(function(a){return 1&a.compareDocumentPosition(n.createElement("div"))}),ja(function(a){return a.innerHTML="<a href='#'></a>","#"===a.firstChild.getAttribute("href")})||ka("type|href|height|width",function(a,b,c){return c?void 0:a.getAttribute(b,"type"===b.toLowerCase()?1:2)}),c.attributes&&ja(function(a){return a.innerHTML="<input/>",a.firstChild.setAttribute("value",""),""===a.firstChild.getAttribute("value")})||ka("value",function(a,b,c){return c||"input"!==a.nodeName.toLowerCase()?void 0:a.defaultValue}),ja(function(a){return null==a.getAttribute("disabled")})||ka(K,function(a,b,c){var d;return c?void 0:a[b]===!0?b.toLowerCase():(d=a.getAttributeNode(b))&&d.specified?d.value:null}),ga}(a);m.find=s,m.expr=s.selectors,m.expr[":"]=m.expr.pseudos,m.unique=s.uniqueSort,m.text=s.getText,m.isXMLDoc=s.isXML,m.contains=s.contains;var t=m.expr.match.needsContext,u=/^<(\w+)\s*\/?>(?:<\/\1>|)$/,v=/^.[^:#\[\.,]*$/;function w(a,b,c){if(m.isFunction(b))return m.grep(a,function(a,d){return!!b.call(a,d,a)!==c});if(b.nodeType)return m.grep(a,function(a){return a===b!==c});if("string"==typeof b){if(v.test(b))return m.filter(b,a,c);b=m.filter(b,a)}return m.grep(a,function(a){return m.inArray(a,b)>=0!==c})}m.filter=function(a,b,c){var d=b[0];return c&&(a=":not("+a+")"),1===b.length&&1===d.nodeType?m.find.matchesSelector(d,a)?[d]:[]:m.find.matches(a,m.grep(b,function(a){return 1===a.nodeType}))},m.fn.extend({find:function(a){var b,c=[],d=this,e=d.length;if("string"!=typeof a)return this.pushStack(m(a).filter(function(){for(b=0;e>b;b++)if(m.contains(d[b],this))return!0}));for(b=0;e>b;b++)m.find(a,d[b],c);return c=this.pushStack(e>1?m.unique(c):c),c.selector=this.selector?this.selector+" "+a:a,c},filter:function(a){return this.pushStack(w(this,a||[],!1))},not:function(a){return this.pushStack(w(this,a||[],!0))},is:function(a){return!!w(this,"string"==typeof a&&t.test(a)?m(a):a||[],!1).length}});var x,y=a.document,z=/^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]*))$/,A=m.fn.init=function(a,b){var c,d;if(!a)return this;if("string"==typeof a){if(c="<"===a.charAt(0)&&">"===a.charAt(a.length-1)&&a.length>=3?[null,a,null]:z.exec(a),!c||!c[1]&&b)return!b||b.jquery?(b||x).find(a):this.constructor(b).find(a);if(c[1]){if(b=b instanceof m?b[0]:b,m.merge(this,m.parseHTML(c[1],b&&b.nodeType?b.ownerDocument||b:y,!0)),u.test(c[1])&&m.isPlainObject(b))for(c in b)m.isFunction(this[c])?this[c](b[c]):this.attr(c,b[c]);return this}if(d=y.getElementById(c[2]),d&&d.parentNode){if(d.id!==c[2])return x.find(a);this.length=1,this[0]=d}return this.context=y,this.selector=a,this}return a.nodeType?(this.context=this[0]=a,this.length=1,this):m.isFunction(a)?"undefined"!=typeof x.ready?x.ready(a):a(m):(void 0!==a.selector&&(this.selector=a.selector,this.context=a.context),m.makeArray(a,this))};A.prototype=m.fn,x=m(y);var B=/^(?:parents|prev(?:Until|All))/,C={children:!0,contents:!0,next:!0,prev:!0};m.extend({dir:function(a,b,c){var d=[],e=a[b];while(e&&9!==e.nodeType&&(void 0===c||1!==e.nodeType||!m(e).is(c)))1===e.nodeType&&d.push(e),e=e[b];return d},sibling:function(a,b){for(var c=[];a;a=a.nextSibling)1===a.nodeType&&a!==b&&c.push(a);return c}}),m.fn.extend({has:function(a){var b,c=m(a,this),d=c.length;return this.filter(function(){for(b=0;d>b;b++)if(m.contains(this,c[b]))return!0})},closest:function(a,b){for(var c,d=0,e=this.length,f=[],g=t.test(a)||"string"!=typeof a?m(a,b||this.context):0;e>d;d++)for(c=this[d];c&&c!==b;c=c.parentNode)if(c.nodeType<11&&(g?g.index(c)>-1:1===c.nodeType&&m.find.matchesSelector(c,a))){f.push(c);break}return this.pushStack(f.length>1?m.unique(f):f)},index:function(a){return a?"string"==typeof a?m.inArray(this[0],m(a)):m.inArray(a.jquery?a[0]:a,this):this[0]&&this[0].parentNode?this.first().prevAll().length:-1},add:function(a,b){return this.pushStack(m.unique(m.merge(this.get(),m(a,b))))},addBack:function(a){return this.add(null==a?this.prevObject:this.prevObject.filter(a))}});function D(a,b){do a=a[b];while(a&&1!==a.nodeType);return a}m.each({parent:function(a){var b=a.parentNode;return b&&11!==b.nodeType?b:null},parents:function(a){return m.dir(a,"parentNode")},parentsUntil:function(a,b,c){return m.dir(a,"parentNode",c)},next:function(a){return D(a,"nextSibling")},prev:function(a){return D(a,"previousSibling")},nextAll:function(a){return m.dir(a,"nextSibling")},prevAll:function(a){return m.dir(a,"previousSibling")},nextUntil:function(a,b,c){return m.dir(a,"nextSibling",c)},prevUntil:function(a,b,c){return m.dir(a,"previousSibling",c)},siblings:function(a){return m.sibling((a.parentNode||{}).firstChild,a)},children:function(a){return m.sibling(a.firstChild)},contents:function(a){return m.nodeName(a,"iframe")?a.contentDocument||a.contentWindow.document:m.merge([],a.childNodes)}},function(a,b){m.fn[a]=function(c,d){var e=m.map(this,b,c);return"Until"!==a.slice(-5)&&(d=c),d&&"string"==typeof d&&(e=m.filter(d,e)),this.length>1&&(C[a]||(e=m.unique(e)),B.test(a)&&(e=e.reverse())),this.pushStack(e)}});var E=/\S+/g,F={};function G(a){var b=F[a]={};return m.each(a.match(E)||[],function(a,c){b[c]=!0}),b}m.Callbacks=function(a){a="string"==typeof a?F[a]||G(a):m.extend({},a);var b,c,d,e,f,g,h=[],i=!a.once&&[],j=function(l){for(c=a.memory&&l,d=!0,f=g||0,g=0,e=h.length,b=!0;h&&e>f;f++)if(h[f].apply(l[0],l[1])===!1&&a.stopOnFalse){c=!1;break}b=!1,h&&(i?i.length&&j(i.shift()):c?h=[]:k.disable())},k={add:function(){if(h){var d=h.length;!function f(b){m.each(b,function(b,c){var d=m.type(c);"function"===d?a.unique&&k.has(c)||h.push(c):c&&c.length&&"string"!==d&&f(c)})}(arguments),b?e=h.length:c&&(g=d,j(c))}return this},remove:function(){return h&&m.each(arguments,function(a,c){var d;while((d=m.inArray(c,h,d))>-1)h.splice(d,1),b&&(e>=d&&e--,f>=d&&f--)}),this},has:function(a){return a?m.inArray(a,h)>-1:!(!h||!h.length)},empty:function(){return h=[],e=0,this},disable:function(){return h=i=c=void 0,this},disabled:function(){return!h},lock:function(){return i=void 0,c||k.disable(),this},locked:function(){return!i},fireWith:function(a,c){return!h||d&&!i||(c=c||[],c=[a,c.slice?c.slice():c],b?i.push(c):j(c)),this},fire:function(){return k.fireWith(this,arguments),this},fired:function(){return!!d}};return k},m.extend({Deferred:function(a){var b=[["resolve","done",m.Callbacks("once memory"),"resolved"],["reject","fail",m.Callbacks("once memory"),"rejected"],["notify","progress",m.Callbacks("memory")]],c="pending",d={state:function(){return c},always:function(){return e.done(arguments).fail(arguments),this},then:function(){var a=arguments;return m.Deferred(function(c){m.each(b,function(b,f){var g=m.isFunction(a[b])&&a[b];e[f[1]](function(){var a=g&&g.apply(this,arguments);a&&m.isFunction(a.promise)?a.promise().done(c.resolve).fail(c.reject).progress(c.notify):c[f[0]+"With"](this===d?c.promise():this,g?[a]:arguments)})}),a=null}).promise()},promise:function(a){return null!=a?m.extend(a,d):d}},e={};return d.pipe=d.then,m.each(b,function(a,f){var g=f[2],h=f[3];d[f[1]]=g.add,h&&g.add(function(){c=h},b[1^a][2].disable,b[2][2].lock),e[f[0]]=function(){return e[f[0]+"With"](this===e?d:this,arguments),this},e[f[0]+"With"]=g.fireWith}),d.promise(e),a&&a.call(e,e),e},when:function(a){var b=0,c=d.call(arguments),e=c.length,f=1!==e||a&&m.isFunction(a.promise)?e:0,g=1===f?a:m.Deferred(),h=function(a,b,c){return function(e){b[a]=this,c[a]=arguments.length>1?d.call(arguments):e,c===i?g.notifyWith(b,c):--f||g.resolveWith(b,c)}},i,j,k;if(e>1)for(i=new Array(e),j=new Array(e),k=new Array(e);e>b;b++)c[b]&&m.isFunction(c[b].promise)?c[b].promise().done(h(b,k,c)).fail(g.reject).progress(h(b,j,i)):--f;return f||g.resolveWith(k,c),g.promise()}});var H;m.fn.ready=function(a){return m.ready.promise().done(a),this},m.extend({isReady:!1,readyWait:1,holdReady:function(a){a?m.readyWait++:m.ready(!0)},ready:function(a){if(a===!0?!--m.readyWait:!m.isReady){if(!y.body)return setTimeout(m.ready);m.isReady=!0,a!==!0&&--m.readyWait>0||(H.resolveWith(y,[m]),m.fn.triggerHandler&&(m(y).triggerHandler("ready"),m(y).off("ready")))}}});function I(){y.addEventListener?(y.removeEventListener("DOMContentLoaded",J,!1),a.removeEventListener("load",J,!1)):(y.detachEvent("onreadystatechange",J),a.detachEvent("onload",J))}function J(){(y.addEventListener||"load"===event.type||"complete"===y.readyState)&&(I(),m.ready())}m.ready.promise=function(b){if(!H)if(H=m.Deferred(),"complete"===y.readyState)setTimeout(m.ready);else if(y.addEventListener)y.addEventListener("DOMContentLoaded",J,!1),a.addEventListener("load",J,!1);else{y.attachEvent("onreadystatechange",J),a.attachEvent("onload",J);var c=!1;try{c=null==a.frameElement&&y.documentElement}catch(d){}c&&c.doScroll&&!function e(){if(!m.isReady){try{c.doScroll("left")}catch(a){return setTimeout(e,50)}I(),m.ready()}}()}return H.promise(b)};var K="undefined",L;for(L in m(k))break;k.ownLast="0"!==L,k.inlineBlockNeedsLayout=!1,m(function(){var a,b,c,d;c=y.getElementsByTagName("body")[0],c&&c.style&&(b=y.createElement("div"),d=y.createElement("div"),d.style.cssText="position:absolute;border:0;width:0;height:0;top:0;left:-9999px",c.appendChild(d).appendChild(b),typeof b.style.zoom!==K&&(b.style.cssText="display:inline;margin:0;border:0;padding:1px;width:1px;zoom:1",k.inlineBlockNeedsLayout=a=3===b.offsetWidth,a&&(c.style.zoom=1)),c.removeChild(d))}),function(){var a=y.createElement("div");if(null==k.deleteExpando){k.deleteExpando=!0;try{delete a.test}catch(b){k.deleteExpando=!1}}a=null}(),m.acceptData=function(a){var b=m.noData[(a.nodeName+" ").toLowerCase()],c=+a.nodeType||1;return 1!==c&&9!==c?!1:!b||b!==!0&&a.getAttribute("classid")===b};var M=/^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,N=/([A-Z])/g;function O(a,b,c){if(void 0===c&&1===a.nodeType){var d="data-"+b.replace(N,"-$1").toLowerCase();if(c=a.getAttribute(d),"string"==typeof c){try{c="true"===c?!0:"false"===c?!1:"null"===c?null:+c+""===c?+c:M.test(c)?m.parseJSON(c):c}catch(e){}m.data(a,b,c)}else c=void 0}return c}function P(a){var b;for(b in a)if(("data"!==b||!m.isEmptyObject(a[b]))&&"toJSON"!==b)return!1;
@@ -1518,531 +1518,573 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">ch09 Tidy data</h1>
+<h1 class="title toc-ignore">ch08 Data import</h1>
 <h4 class="author">JustY</h4>
 
 </div>
 
 
-<div id="들어가기" class="section level3">
-<h3>9.1 들어가기</h3>
-<p><strong>데이터 분석가들은 흔히 데이터를 정제하고 준비하는 데 전체 분석 시간 중 80%를 쓴다고 말한다</strong><br />
-(It is often said that 80% of data analysis is spent on the cleaning and preparing data).</p>
-<p>타이디 데이터는 tidy, 즉 깔끔한 데이터라는 뜻이다<br />
-tidyr은 tidyverse 패키지에 포함되어있는 도구이다<br />
-타이디 데이터와 tidyr을 사용하면 데이터를 기존의 표현법에서 다른 표현법으로 훨씬 빠르게<br />
-처리할 수 있고 이말은 분석에 시간을 더 쓸 수 있게 된다는것이다<br />
-9장에서는 타이디 데이터에 대해 실무적으로 소개하고 tidyr에 포험된 도구의 사용법을 살펴본다</p>
-</div>
-<div id="준비하기" class="section level3">
-<h3>- 9.1.1 준비하기</h3>
-<p>tidyr은 tidyverse에 포함되어 있으므로 해당 패키지가 설치 되어있지않다면 우선 설치한다</p>
-<p><strong>install.packages(“tidyverse”)</strong></p>
-<p>tidyr만 단독으로 사용하고 싶다면 tidyr 패키지만 설치해줘도 된다</p>
-<p><strong>install.packages(“tidyr”)</strong></p>
-<p>그리고 설치한 tidyverse 패키지를 활성화 시켜준다</p>
+<p><FONT SIZE="5"></p>
+<div id="준비하기" class="section level1">
+<h1><strong>8.1 준비하기</strong></h1>
+<ul>
+<li>tidyverse로드하라</li>
+</ul>
 <pre class="r"><code>library(tidyverse)</code></pre>
-<p>tidyr만 설치 했을 시에는</p>
-<p><strong>library(tidyr)</strong></p>
+<p>위 코드 실행 시, ‘tidyverse’ 페키지 없음 오류 메시지 뜨면, 페키지 설치 후 ’libary()’를 실행한다.</p>
+<pre class="r"><code>install.packages(&quot;reader&quot;)
+libary(tidyverse)</code></pre>
 </div>
-<div id="타이디-데이터" class="section level3">
-<h3>9.2 타이디 데이터</h3>
-<p>다음 예는 같은 데이터를 다른 4가지 방식으로 구성한것이다</p>
-<pre class="r"><code>tidyr::table1</code></pre>
-<pre><code>## # A tibble: 6 x 4
-##   country      year  cases population
-##   &lt;chr&gt;       &lt;int&gt;  &lt;int&gt;      &lt;int&gt;
-## 1 Afghanistan  1999    745   19987071
-## 2 Afghanistan  2000   2666   20595360
-## 3 Brazil       1999  37737  172006362
-## 4 Brazil       2000  80488  174504898
-## 5 China        1999 212258 1272915272
-## 6 China        2000 213766 1280428583</code></pre>
-<pre class="r"><code>tidyr::table2</code></pre>
-<pre><code>## # A tibble: 12 x 4
-##    country      year type            count
-##    &lt;chr&gt;       &lt;int&gt; &lt;chr&gt;           &lt;int&gt;
-##  1 Afghanistan  1999 cases             745
-##  2 Afghanistan  1999 population   19987071
-##  3 Afghanistan  2000 cases            2666
-##  4 Afghanistan  2000 population   20595360
-##  5 Brazil       1999 cases           37737
-##  6 Brazil       1999 population  172006362
-##  7 Brazil       2000 cases           80488
-##  8 Brazil       2000 population  174504898
-##  9 China        1999 cases          212258
-## 10 China        1999 population 1272915272
-## 11 China        2000 cases          213766
-## 12 China        2000 population 1280428583</code></pre>
-<pre class="r"><code>tidyr::table3</code></pre>
-<pre><code>## # A tibble: 6 x 3
-##   country      year rate             
-## * &lt;chr&gt;       &lt;int&gt; &lt;chr&gt;            
-## 1 Afghanistan  1999 745/19987071     
-## 2 Afghanistan  2000 2666/20595360    
-## 3 Brazil       1999 37737/172006362  
-## 4 Brazil       2000 80488/174504898  
-## 5 China        1999 212258/1272915272
-## 6 China        2000 213766/1280428583</code></pre>
-<pre class="r"><code>tidyr::table4a</code></pre>
-<pre><code>## # A tibble: 3 x 3
-##   country     `1999` `2000`
-## * &lt;chr&gt;        &lt;int&gt;  &lt;int&gt;
-## 1 Afghanistan    745   2666
-## 2 Brazil       37737  80488
-## 3 China       212258 213766</code></pre>
-<pre class="r"><code>tidyr::table4b</code></pre>
-<pre><code>## # A tibble: 3 x 3
-##   country         `1999`     `2000`
-## * &lt;chr&gt;            &lt;int&gt;      &lt;int&gt;
-## 1 Afghanistan   19987071   20595360
-## 2 Brazil       172006362  174504898
-## 3 China       1272915272 1280428583</code></pre>
-<p>각 데이터셋은 country(국가), year(연도), population(인구), cases(사례 수)의 값을 동일하게 보여주지만<br />
-다른방식으로 구성되었다</p>
-<p>데이터셋을 깔끔하게 만드는, 서로 연관된 세 가지 규칙을 tidyr에서는<br />
-다음과 같이 말하고 있다</p>
-<p><strong>1.변수마다 해당되는 열이 있어야 한다.</strong><br />
-<strong>2.관측값마다 해당되는 행이 있어야 한다</strong><br />
-<strong>3.값마다 해당하는 하나의 셀이 있어야한다</strong></p>
-<p>위의 3가지 규칙들은 서로 연관되어 있어, 셋중 두가지만 충족시키는것은 불가능하다</p>
-<p>조금 더 쉽게 말하자면 보통 표를 그릴 때 크게 두가지 방식중 하나를 쓸 수 있다는것을 생각하면 된다</p>
-<p>예를 들어 다섯사람이 서로 친구인지 아닌지 표를 그린다는 가정하에 아래의 두가지 방식이 가능하다</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAArYAAADtCAYAAABK1TbxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAACN4SURBVHhe7Z3faxx3uub9fxhmRve+WcIYZi+SuVB2IfaCiSEMETk7NiT0QYsFMcFj7yB8SER2bZ+zQVHAphEk4wMzHU/WKOOA7Zg0GkIH5lgmZOWA0VwY5YCN4Bj3hUEXhner1NVWSyqp+9vq+vE+9fnAc6HuTkqPnre+9VR1dfuAAQAAAAAIQLEFAAAAAAkotgAAAAAgwUDF9p133kEIocorT9K2jxBCVVMoAxXbH3/80X744QcZxX7iP1bac96FN7/CX7kV//55Em8v7fdAPqS+P1dJZFmchll3Byq2aRvzLuUhxZtf4a/cypO07SNfUt+fqySyLE6hUGwFhTe/wl+5lSdp20e+pL4/V0lkWZxCodgKCm9+hb9yK0/Sto98SX1/rpLIsjiFQrEVFN78Cn/lVp6kbR/5kvr+XCWRZXEKhWIrKLz5Ff7KrTxJ2z7yJfX9uUoiy+IUCsVWUHjzK/yVW3mStn3kS+r7c5VElsUpFIqtoPDmV/grt/IkbfvIl9T35yqJLItTKBRbQeHNr/BXbuVJ2vaRL6nvz1USWRanUCi2gsKbX+Gv3MqTtO0jX1Lfn6sksixOoVBsR6jW5xft/PS83U55Lk9l5+2iNVrpz+clZW+x8BeuPP3lSdr296P9rU+3bX76vF38vJXyHNpN5TvOkOOwGibLu99ct6tXr27RjW+3vuZ2/byd/+eGtXoeQ1sVCsV2EN1tWau1m+6+eN3ix2/YwYPnrNH73xagIG/f3oh2tuu2eDfluR51vL1hs9+kP5+Xgrx9fzclr66251a8t1gh/tIWza6uf+Pf35759cxrnv7yJG37fbV41Wai4jJ/c+dzqevTN7P2xsGD0eMp+s2sLb54bcPORY+98fHi5n+L+ipo3ntFjqXTMFku1k/Zkf92ZItmvtj6msbvtmfU8/j2LNP0u8aW/05RoVBsB1BnIUkZqA1tLjCpC04BCtoBPz8X/c79S0Ge5WEvhXtLyyzW9tz8Fb+95rL3wOXV3175FeUvT9K231dJwTn3+c7nOn+n7etT2snDDbv4RvR3HqQQbZwYz9vsB+ft/PRpq/1mxq73Pl9xBc17r/LOMVLrL5ft3G/H7aXo+YMHX7Lx356zy19tniBXXaFZ3t2RR496Tsx3K7atr9IvWmxqxk7GWf6f21v+O0WFQrHdhxrvbR3I9AUnf4WXB+1im3Zw6FVZvMXa91wmB0SdYrv99955YM7TX56kbb+vvjhnh3aZ+cHXp0Wb/c2AhSjZxw7953H71aG4EBW//pVJQ+/POed4N8pxPHr8pd+cs9n5qDTNX7RTrx2KtjNu569vvq7KCssy+dtHf9M0nfps84Rht2LbX7ufpKgplAOPn65bP6VtyLv2XSB+uG7nXz5or/zT9RePDb7gZKv9l4edKks5CvdGsXXrr4TFNm19zEpp2++rP57e9W+Ruj4tztupbW+VxtooqSmFaPPgvH2d6x7IKba9Gnp/zjXHzrEsft2W+3a/vbxxRfDg1FW72/t4RRWaZdoV28b0ePQ3r9l8z+cB9lNsT0f5THyiX2zT1se9xBXbYXX9vL1y8JUtZ7OpC04B2n952KmylKNwbxRbt/5KWGzzJG37/XT7wpHob3HKrqbcM5+6PiXzcuS9yzvf6vxisafQJH/3CzeSg/T2t6gptmkadn/ONcfumrHjLe20K77V1b7X5q9nbSI60RjvuRgWa+him+TW7/imoFAotkPprl2dOmQHx89vuZ+ss+Acs9p0fL9ZpHox977svzzsVMfbIfvVa8nVgP8xX8hiF+5t0GL7ik28m+RW4CdUQ/ylfTDhyGu/2ngLc2fx8+cvrNjGpSpRhgfiPEnb/t66bRePxX+DQ1ar7/zUe+fvdNJmuoXnq+g1KSdC6dr5d98qim2ahjvOFJljr6LXxld835nnE/uRhssyUSv6W45Hf8v/MmM3tj03dLHduF3liF1M+YChmkKh2A6hzv1IOxedzoLzko13S8YHW8/M8tL+y8NOlaUchXsbtNgWX9pjhfjr/N5H7PQnyQGuRzu/FcGfv7Bi+4Zd/Ev3Lb/sPvCSJ2nb31Mb7yIdik5uxnecdMfq/J3iwpQo/jT1rlf6LtvFeD+fOmlHxk9GGVBsh9FQx5lCc9zU4icTUXE6ZKevZrc/edJQWUZq/eWinfzlQTv02jE7Ep0ovPTbi3ZjBLcitOq1KP+ttzWoKhSKbai+nbdTL0dD+g/b7keK1Flwil/Y918edqpbHvq9LmuFe9O9FWHQ39urv9Bim4e/PEnb/u5atMv/kLyL1Lpqp+K3PH9/fcu9kZ2/U/pb2FuK0qFfJe8AnLRTUSm6eDn+OkCK7TAKP84UnWOi5G3zV95rcH9touAsv71us1PHNr5lYvwfL9vt76PHvr7c+VDeoSN28oOrthg9trXYdvejIST8tV+hUGxD9O1VOx2/nTAeLSp/2/l86oJTgPZfHnr0t5bdvrlot0tSjsK9UWy9+qPYpv8Oabr9cXx17RU7/cfO1bW7n52Kfn7JTn6yeTvU/tanfl/sT7FNU+hxpvgcIyXHuUOvR+U65ThXVYVkGV9NjQvtodfiW0a2nUR8v2hXpyfs2O87Jw1bi+1dW/yi94p7jz45bUei/+fJD1OeixXfktK7HSGFQrEdUK0/nrNj8f1G4zWb/zr9NftbcEan8PLQ8zb1C3W/z7Cz0zVKUo7CvR200/Odt6gXv2p0FoD5WZvZ+M7N6Kz5k0W3xW/X3zs6GWm1btv1q5dtPjqAefXXya/n9pcN1exYlCnFdlOtz05vfFXT+O96r67dtcbvj3RK0T/f2Hh8z/Wp1ei8Zd1HFNswhcx7KXL8W3TiuMfFmyoraO2Kcrv91WJPjrtr4FsRkqvyVfiw2HaFQrHtp+9v2MXfdj6QM/6Ps3Zjj519zwUnRwXtgDfnUxe+8x/M2nxUAq9/3bK73+dbHvZSeDFKynmvfjmevD130a5+E50hl8RbrBB/nd87xV9Xkc9Tdb/F/YcvZradbG0q9tV9XZ7+8iRt+9t1++OTnbc6ozK08573u3b9n47ZoUMTNnuzz/qUHDRfGk//e3dPdLkVIUyDzns5crxts/FtEL88aZd3uXhTZQWtXT3q90/mUmz7KxSK7QC6+/nFnW8npGjPBSdHDbsD7qWylCNlb7GC5nLHP6nbsBuLnavT8clI93Ve/Q2qPP3lSdr2d+hvN2x+vnMlL/X5SN0P0+25PvU9aHKP7TAaeN4LzzEptXF5ptSmati1q29x3XiHbYAP6FFsB4ZiO0LtueDkKO/lYS8pe4uFv3Dl6S9P0ra/H+25PlFsM1Hux5mhcrwbla/4Hw44aMd+P7/tZLmjG9/2/j+qqWGzHPiKbD9RbAeGYjtC7bng5CjlcqTsLRb+wpWnvzxJ2/5+tOf6lBw0j72z7ZakF9p5b/NWUWzTlPtxZqgcO2V3x61MPapimdquYbPcKLYvT9jp1Dy6umiNfl/bRbEdGIrtCLXngpOjlMuRsrdY+AtXnv7yJG37+9Ge69Mu/yTrdvXe24z6K/fjDDlmpmGzvP5BegZbdcrmF9P/+xei2A4MxVZQePMr/JVbeZK2feRL6vtzlUSWxSkUiq2g8OZX+Cu38iRt+8iX1PfnKoksi1MoFFtB4c2v8Fdu5Una9pEvqe/PVRJZFqdQKLaCwptf4a/cypO07SNfUt+fqySyLE6hUGwFhTe/wl+5lSdp20e+pL4/V0lkWZxCodgKCm9+hb9yK0/Sto98SX1/rpLIsjiFQrEVFN78Cn/lVp6kbR/5kvr+XCWRZXEKhWIrKLz5Ff7KrTxJ2z7yJfX9uUoiy+IUCsVWUHjzK/yVW3mStn3kS+r7c5VElsUplAOPn65bPy3fv5+6Ma+K/agOKd78Cn/lVvz7p62PWSneXtrvgXxIfX+uksiyOA2z7g50xfbJkyf2448/pm7Um2IfsZ94SFU8dYU3v8JfudX9/fMk3p7iLFRB3ucdbYosi1P3bx/KQMU2DhQhhKquPEnbPkIIVU2hDFRsFRnmj+UFvPkFfwA6MO86kKUfKLaC4M0v+APQgXnXgSz9QLEVBG9+wR+ADsy7DmTpB4qtIHjzC/4AdGDedSBLP1BsBcGbX/AHoAPzrgNZ+oFiKwje/II/AB2Ydx3I0g8UW0Hw5hf8AejAvOtAln6g2AqCN7/gD0AH5l0HsvQDxVYQvPkFfwA6MO86kKUfKLaC4M0v+APQgXnXgSz9UEixbd9rWP1K01aTn4tAeUjx5hf8QVaUYd2tGlnMeyfHhi21kwcgF1i7/DDaYrvetnZ7N60nLzJb+7JmY2NztpT8XATKQ4o3v+APgnG07laNoHl/smKt1rKtbUaWSifHmi08Sh6AXGDt8sNIi21nhxvbRZsLKsU2W/DmF/xBKJ7W3aoRNO/35qJ8+hdWim0xsHb5IZdbEZb+JVpgJxdsLfmZYpstePML/mBUlHHdrRpB806xLTWsXX7IodguW/3ImB2dX05+pthmDd78gj8YDeVcd6tG0LxTbEsNa5cfsi+29+t2dOyo1e8nP0dQbLMFb37BH4yEkq67VSNo3im2pYa1yw8ZF9t1a3142MZer9vmdYPujnnCpq/UrR7rTv6f01Ue0qG8tVds4cIZq9Um7MRkLcqmaavPkudKhPriopxdDAeHPCjvuls1guY9qNgetlffnLCJtyK933xxuwlkh/rarESmxXY92lGPRzvg9J2t30vS2TFftuPxThnr097lNx+UD7DB3p40beZsw1Z6Y2ovW/1sdGDs8wndvFEvRsrZxajnVwbKvO5WjaB5Dyq2R23qQnKCcm3J+Oav7FFfm5U48PjpumWih7ft7H/9hf2nyT/bvW3P3f/T2/azn39kX297PE/FQ5r2uIJCvS3OfWQ3HqU89//+1U5/9vedjxco5dxiKWcXSz2/wlXydbdqCpr3v34U5fO2ffYg5bkedXLs/zo0WqmvzUrK5ortk5Zden3Mxl6fs6WUy+6dM07usc2KMG+r1pht7nLGHz134Wap3uZSzi1GObsY9fwKxcG6WzWC5r3fFdtnbVt9uGarGzlyj23eqK/NSoy82Lb/bc5OHI4X12lr/pQ8uA2KbbYE74C77mR77ZzFoF6MlLOLUc+vKLysu1UjaN43im3PvbMvdNxe7n4v8eSCLVFsC0F9bVZidMX2+Yo13nvVDkc73/HzC7ayxw3SFNtsCfW2PD+dvkjer9vMrXLtfurFSDm7GPX8csfZuls1gub9YbNzz+x2fbpgzVbLln9q2/rzbo4U27xRX5uVGOkV2/V7DftDq/8FdopttgR7e7Zkc1OXrNkTXfvBgs28vxCdW5YL9WKknF2Men5F4GndrRpZzDvFthjU12YlMv1WhN2g2GbLUN6er1nr2oydmTxjU+9OW/3WSinfKlEvRsrZxajnV2YotvmTxbxTbItBfW1WgmIrCN78gj/ICopt/mQx7xTbYmDt8gPFVhC8+QV/kBUU2/zJYt4ptsXA2uWHQoptGVAeUrz5BX8AOjDvOpClHyi2guDNL/gD0IF514Es/UCxFQRvfsEfgA7Muw5k6QeKrSB48wv+AHRg3nUgSz9QbAXBm1/wB6AD864DWfqBYisI3vyCPwAdmHcdyNIPFFtB8OYX/AHowLzrQJZ+oNgKgje/4A9AB+ZdB7L0A8VWELz5BX8AOjDvOpClHyi2guDNL/gD0IF514Es/UCxFQRvfsEfgA7Muw5k6YeBim0cKEIIVV15krZ9hBCqmkLhiq0gePML/gB0YN51IEs/HHj8dN2qqHhI0x5XEN78Cn8I6Yh51xFZ+hFXbAXBm1/wB6AD864DWfqBYisI3vyCPwAdmHcdyNIPFFtB8OYX/AHowLzrQJZ+oNgKgje/4A9AB+ZdB7L0A8VWELz5BX8AOjDvOpClHyi2guDNL/gD0IF514Es/UCxFQRvfsEfgA7Muw5k6QeKrSB48wv+AHRg3nUgSz8UUmzb9xpWv9KwpXbyQAEoDyne/II/yIrOutu01eRnyJ4s5r0Mx88qwtrlh9EW2ycr1mot29p68vMurH1Zs7Gxmi08Sh4oAOUhxZtf8AfBrLet3d5Nm4txZ92ds6XkZ8iekHlff7QcHT9bqVp+tD3HYo+fVYS1yw+jLbb35gba4Si22YI3v+APQumsp2O7aLPIUmzzJ2Te98qx9uVa8iqKbVGwdvmBYisI3vyCPxgVS/8SlaLJBetWIopt/ux73h8tWI1iWwpYu/xAsRUEb37BH4yGZasfGbOj88vJzxTbItj3vFNsSwNrlx8otoLgzS/4g5Fwv25Hx45a/X7ycwTFNn/2Pe8U29LA2uWHAovtYXv1zQmbeCvS+80Xb5flxVBD2l6xhQtnrFabsBOTNZuOP2H8LHmuRCjvgMq5xagvnhwc8mDdWh8etrHX67Z5vba77p6I5r9u9Vh3+H6ErAmZ97U7M53jYa/efNUOpxbbozZ1Icnx2pLxBQnZo37sUaLAYlvsjhk8pE+aNnO2YSu9v2h72epno4NHn2+ByBvl8qCcW4xydjHq/srAerQOHx87bNN3tq6qnXX3ZTveLU2f9tZeyIKQee/kM2GXvhrkWxGKvTBURdSPPUpwK8KALM/PWSvtTOthw6avlevKh3J5UM4tRjm7GHV/hRMfTI+M2eF3F3Z8X21n3eVWhDwJmfdBj4tlOH5WEfVjjxL5FttnbVt9uGar7ortqjVmm7tcVY6eu3CzVGfMyuVBObcY5exi1P0VypOWXXp9zMZej8prygGVYps/IfNOsS036sceJTIotj1vkbzQcXt5LPlOvskFW/JYbHcdxL0GuBiUy4NybjHK2cWo+yuK9r/N2YnDcamdtuZPyYPboNjmT8i871pYn8X/0MaqLbduWvNem2JbEOrHHiVGW2wfNjv3zG7XpwvWjO8T+qlt68/LccYZeoBdnp9O/33v123mVrlGVLk8KOcWo5xdjLq/3Hm+Yo33Oh8wOn5+wVb2+GAKxTZ/Qua9k09yAShNvz5uM3fWKLYFoX7sUeLA46frlrfu/+lt+9nP37bPHqQ/n4fiIU17fFc9+s4+rP0v+79/33xs5e6f7ez//LPd631dCRTszZGUc4ulnF0sdX9FaPWv/2of3/731Od61Vl3P7KvU55D2Shk3lcf3LMbtxd79J199/c1W/lpzVb/Y/N1ZTh+VlHqxx4ljfaK7YB4vGK7wfM1a12bsTOTZ2zq3Wmr31op5dsJQ3lzgnJuMcrZxaj7KzNcsc2fLOadK7bFoH7sUYJiKwje/II/yAqKbf5kMe8U22Jg7fIDxVYQvPkFf5AVFNv8yWLeKbbFwNrlh0KKbRlQHlK8+QV/ADow7zqQpR8otoLgzS/4A9CBedeBLP1AsRUEb37BH4AOzLsOZOkHiq0gePML/gB0YN51IEs/UGwFwZtf8AegA/OuA1n6gWIrCN78gj8AHZh3HcjSDxRbQfDmF/wB6MC860CWfqDYCoI3v+APQAfmXQey9APFVhC8+QV/ADow7zqQpR8otoLgzS/4A9CBedeBLP1AsRUEb37BH4AOzLsOZOmHgYptHChCCFVdeZK2fYQQqppC4YqtIHjzC/4AdGDedSBLP1BsBcGbX/AHoAPzrgNZ+oFiKwje/II/AB2Ydx3I0g8UW0Hw5hf8AejAvOtAln6g2AqCN7/gD0AH5l0HsvTDgcdP162Kioc07XEF4c2v8IeQjph3HZGlH3HFVhC8+QV/ADow7zqQpR8otoLgzS/4A9CBedeBLP1AsRUEb37BH4AOzLsOZOkHiq0gePML/gB0YN51IEs/FFJs2/caVr/SsKV28kABKA8p3vyCP8iKMqy7VSOLeSfHYmDt8sNoi+3zdWu327toPXmR2dqXNRsbq9nCo+SBAlAeUrz5BX8QzJMVa7WWbW1ziU2lDOtu1Qiad0fHzyrC2uWH0Rbbe3PRDje2i+ZsKXkZxTZb8OYX/EEwG+tu//WUQpQ/QfPu6PhZRVi7/JBJsZ27l/y8CxTbbMGbX/AHwVBsS0vQvDs6flYR1i4/UGwFwZtf8AfBUGxLS9C8U2xLDWuXHyi2guDNL/iDYCi2pSVo3im2pYa1yw8FFtujNnWhbvUrka4tWd4f8FQe0qG8tVds4cIZq9Um7MRkzaavNG31WfJciVBfXJSzi1H3VwhBxfawvfrmhE28Fen9pq0lz0E2BM27o+NnFWHt8kOBxbbYBVa5IAV7e9K0mbMNW+ldHdvLVj9bt+U+n7TOG+XcYpSzi1H3VwhBxZZClCdB8+7o+FlFWLv8wK0IgoR6W56fs1baWeTDhk1fW01+KAfKucUoZxej7q8Qgootb2HnSdC8Ozp+VhHWLj9QbAUJ87ZqjdnmLlduoucu3CzV1QDl3GKUs4tR91cI/Yrts7atPlyzVQpR7gTNO8W21LB2+SGTYnup2flS6bW/L1mr1bJWc8H+cOWSTU9O2Jmv1ii2GRO8A+66k+21cxaDcm4xytnFqPsrhI11t+et6Rc6bi9H63G8Jo9NLtgShSh3gubd0fGzirB2+SGTYrtDvz4eLbJnbOZKw1qP1im2GRPqbXl+Oj2L+3WbuVWu3U85txjl7GLU/RXCw2bnntnt+nTBmlExWv6pbevPudJXBEHz7uj4WUVYu/ww2mI7IBTbbAn29mzJ5qYuWbPn9LL9YMFm3l+Izi3LhXJuMcrZxaj7KzMUovzJYr0ix2Jg7fIDxVaQobw9X7PWtRk7M3nGpt6dtvqtlVK+VaKcW4xydjHq/soMhSh/slivyLEYWLv8QLEVBG9+wR9kBYUof7KYd3IsBtYuP1BsBcGbX/AHWUEhyp8s5p0ci4G1yw8HHj9dtyoqHtK0xxWEN7/CH0I6Yt51RJZ+VMgV2zIQD6kqePML/gB0YN51IEs/UGwFwZtf8AegA/OuA1n6gWIrCN78gj8AHZh3HcjSDxRbQfDmF/wB6MC860CWfqDYCoI3v+APQAfmXQey9APFVhC8+QV/ADow7zqQpR8otoLgzS/4A9CBedeBLP1AsRUEb37BH4AOzLsOZOkHiq0gePML/gB0YN51IEs/UGwFwZtf8AegA/OuA1n6YaBiGweKEEJVV56kbR8hhKqmULhiKwje/II/AB2Ydx3I0g8UW0Hw5hf8AejAvOtAln6g2AqCN7/gD0AH5l0HsvQDxVYQvPkFfwA6MO86kKUfKLaC4M0v+APQgXnXgSz9QLEVBG9+wR+ADsy7DmTpB4qtIHjzC/4AdGDedSBLP1BsBcGbX/AHoAPzrgNZ+oFiKwje/II/AB2Ydx3I0g8HHj9dtyoqHtK0xxWEN7/CH0I6Yt51RJZ+VMgV2/a9htWvNGypnTxQAPGQqoI3v+APsqIM627VyGLeybEYWLv8MNJiu/5o2VqtVqqWH60nrzJb+7JmY2M1W3iUPFAAykOKN7/gD4J5shKtscu2trnEplKGdbdqBM3783Vrt9vp6smWHIuBtcsPIy22nR1uLFW1L9eSV1FsswZvfsEfBHNvbqD1lEKUP0HzvpGjj+NnFWHt8kP2tyI8WrBaCXdM5SHFm1/wB8FQbEtL0Lyn5rhkcxTbUsDa5QeKrSB48wv+IBiKbWkJmneKbalh7fIDxVYQvPkFfxAMxba0BM07xbbUsHb5YbT32N6ZsYm3JrbqzVftcOqOedSmLtStfiXStSXL+wOeQw1pe8UWLpyxWm3CTkzWbPpK01afJc+VCOUdUDm3GPXFUz2/Qggqtoft1TeTtfn9pm2uypAFQfMeVGx77sGdXCDHHGDt8kMGHx6bsEtfDfKtCMUusMFD+qRpM2cbttLbwNvLVj9bt+U+n0bOG+VypJxbjHJ2Mer5FUJQsS32gkLVCJr3wCu2jQfdb01gR8gD1i4/ZFBsB11g+78uS0KHdHl+zlppZ1oPGzZ9bTX5oRwolyPl3GKUs4tRz68Qgoptsetu1Qia98BiS475wtrlB4rtQKxaY7a5y9WN6LkLN0v1VpByOVLOLUY5uxj1/AqhX7F91rbVh2u2SiHKnaB5p9iWGtYuP+RTbKOFtd1eteXWTWvea/sstrsO4l4DXAzK5Ug5txjl7GLU8yuEjULUc2vXCx23l3vuw1yiEOVO0Lxv5Nhzq8iGpu0ExbYUsHb5IYNi23NT+3b9+rjN3FlzWGzjtxWm03/f+3WbuVWuEVUuR8q5xShnF6OeXyE8bPYUoR59umDN+PMNP7Vt/TmFqAiC5v2HP2w7MdlUfNzsQo7FwNrlh5EW253/pO6Srax1bnCPF9YuHoutPVuyualL1uw5BWs/WLCZ9xei869yoVyOlHOLUc4uRj2/MkMhyp8s9mdyLAbWLj+MtNgOistiG/N8zVrXZuzM5Bmbenfa6rdWSvl2gnI5Us4tRjm7GPX8ygyFKH+y2J/JsRhYu/xAsRUEb37BH2QFhSh/sph3ciwG1i4/UGwFwZtf8AdZQSHKnyzmnRyLgbXLD4UU2zKgPKR48wv+AHRg3nUgSz9QbAXBm1/wB6AD864DWfqBYisI3vyCPwAdmHcdyNIPFFtB8OYX/AHowLzrQJZ+OPD46bpVUfGQpj2uILz5Ff4Q0hHzriOy9COu2AqCN7/gD0AH5l0HsvQDxVYQvPkFfwA6MO86kKUfKLaC4M0v+APQgXnXgSz9QLEVBG9+wR+ADsy7DmTpB4qtIHjzC/4AdGDedSBLP1BsBcGbX/AHoAPzrgNZ+mGgYhsHihBCVVeepG0fIYSqplC4YisI3vyCPwAdmHcdyNIPFFtB8OYX/AHowLzrQJZ+oNgKgje/4A9AB+ZdB7L0A8VWELz5BX8AOjDvOpClHyi2guDNL/gD0IF514Es/UCxFQRvfsEfgA7Muw5k6QeKrSB48wv+AHRg3nUgSz9QbAXBm1/wB6AD864DWfqBYisI3vyCPwAdmHcdyNIPFFtB8OYX/AHowLzrQJZ+KKTYtu81rH6lYUvt5IECUB5SvPkFfwA6MO86kKUfRltsn69bu91O13rymoi1L2s2NlazhUfJAwWgPKR48wv+AHRg3nUgSz+Mttjem4sK61iqal+uJS+i2GYN3vyCPxiK7to7u5Q8AGUgeN7JsbSQpR8OPH66biPTXz+yn/38bfvsQe/j39mHP/+F/fc//fuLx+7/6e2U1+WreEjTHlcQ3vwKf2gobay9v7Cf/e/v0p9HhSh43smxtCJLP8rgiu32K7FLNscV21zBm1/wB0PB1aFSEjzv5FhayNIPFFtB8OYX/AHowLzrQJZ+KLDYRmcyXU0u2Oaz+aA8pHjbRnvFFi6csVptwk5M1mz6StNWnyXPlQz8AejAvOtAln4o9Ipt40H3WxN6vjIhJ5SHFG89PGnazNmGrfR+tVx72epn67ac/9j1BX8wFLztWUqC550cSwtZ+oFbEQTB2ybL83PWSrt6+bBh09dWkx/KA/5gKDiIlpLgeSfH0kKWfqDYCoK3LqvWmG1a+r8DEj134Wbut8D0A38wFBxES0nwvJNjaSFLP2RQbI/a1IW61a90NW0nKLa5grcue5W7vUphceAPQAfmXQey9MNoi+0Pf7CJtyZSNXOHYpsXeNtkeX46fc7u123mVtlqH/4AlGDedSBLP4y22A4IxTZb8NbDsyWbm7pkzZ7Lmu0HCzbz/oKV7w5U/MGQ8LZnKQmed3IsLWTpB4qtIHjbxvM1a12bsTOTZ2zq3Wmr31op3Vv0XfAHQ8FBtJQEzzs5lhay9APFVhC8+QV/MBQcREtJ8LyTY2khSz9QbAXBm1/wB6AD864DWfqhkGJbBpSHFG9+wR+ADsy7DmTpB4qtIHjzC/4AdGDedSBLP1BsBcGbX/AHoAPzrgNZ+oFiKwje/II/AB2Ydx3I0g8UW0Hw5hf8AejAvOtAln6g2AqCN7/gD0AH5l0HsvQDxVYQvPkFfwA6MO86kKUfKLaC4M0v+APQgXnXgSz9cODx03WrouIhTXtcQXjzK/whpCPmXUdk6UdcsRUEb37BH4AOzLsOZOkHiq0gePML/gB0YN51IEs/DFRs40ARQqjqypO07SOEUNUUSmWv2AIAAACAFhRbAAAAAJCAYgsAAAAAElBsAQAAAEACii0AAAAACGD2/wETrh7IFnG+VAAAAABJRU5ErkJggg==" /></p>
-<p>각각 와이드, 롱 포맷이라 부른다 와이드는 옆으로 넓게 퍼지고 롱은 아래로 길게 늘어지는 형태로 나타난다</p>
+<div id="시작하기" class="section level1">
+<h1><strong>8.2 시작하기</strong></h1>
+<ul>
+<li>readr 함수 대부분은 <strong><code>플랫 파일을 데이터프레임</code></strong>으로 바꾸는 것과 연관이 있다.</li>
+</ul>
+<p>(플랫 파일이란 구조화되어 있지 않은 파일을 말한다)</p>
+<ul>
+<li><p>read_cuv()는 쉼표로 구분된 파일을 읽고, read_cuv2()는 세미클론으로 구분된 파일을 읽으며, read_tsv()는 텝-구분 파일을 읽는다, read_delim()은 임의의 구분자로 된 파일을 읽는다.</p></li>
+<li><p>read_fwf()는 고정 너비 파일을 읽는다. 필드 너비는 fwf_widths()를 이용하여, 필드 위치는 fwf_positions()를 이용하여 지정할 수 있다. read table()은 고정 너비 파일의 일반적 변형 형태인 열이 공백으로 구분된 파일을 읽는다.</p></li>
+<li><p>read_log()는 Apache 스타일의 로그 파일을 읽는다. (하지만 read_log()위에 구축되어 더많은 유용한 도구를 제공하는 webreadr도 확인하라.) <a href="https://github.com/Ironholds/webreadr" class="uri">https://github.com/Ironholds/webreadr</a></p></li>
+</ul>
+<p>이 함수들은 문법이 모두 비슷하다. 하나를 익히면 나머지는 쉽게 사용할 수 있다. 이 장의 나머지 부분에서 read_csv()에 초점을 맞출 것이다. csv 파일은 가장 일반적인 형태의 데이터 저장 형태일 뿐 아니라 read_csv()를 이해하면 readr의 모든 함수에 쉽게 적용할 수 있다.</p>
+<p>read_csv()의 첫 번쨰 인수가 가장 중요한데 바로 읽으려고 하는 파일의 경로다.</p>
+<pre class="r"><code>library(tidyverse)
+heights &lt;- read_csv(&quot;heights.csv&quot;)</code></pre>
+<p>참고<br />
+-<a href="https://github.com/hadley/r4ds/tree/master/data" class="uri">https://github.com/hadley/r4ds/tree/master/data</a> heights.csv 데이터를 받을 수 있는 깃허브</p>
+<p>-<a href="https://korbillgates.tistory.com/215" class="uri">https://korbillgates.tistory.com/215</a> 깃허브에서 데이터를 다운받는 자세히 나와있다.</p>
+<p>read_csv()를 실행하면 각 열의 이름과 유형을 제공하는 열 사양이 화면 출력된다. 이는 readr에서 중요한 부분이다. 137쪽의 ‘파일 파싱하기’에서 다시 살펴보겠다. 인라인 csv파일을 넣을 수도 있다. 이것은 readr로 실험해볼 때와 다른 사람들과 공유할 재현 가능한 예제를 만들 때 유용하다.</p>
+<pre class="r"><code>read_csv(&quot;a,b,c
+         1,2,3
+         4,5,6&quot;)</code></pre>
+<pre><code>## # A tibble: 2 x 3
+##       a     b     c
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     1     2     3
+## 2     4     5     6</code></pre>
+<p>두 경우 모두 read_csv()는 데이터의 <strong><code>첫 번쨰 줄을 열 이름</code></strong>으로 사용한다. 이는 매우 일반적인 규칙이다. 이는 매우 일반적인 규칙이다. 이 동작을 조정해야 하는 경우는 두 가지이다.</p>
+<p>파일 앞 부분에 메타 데이터 몇 줄이 있는 경우가 있다. <strong><code>skip = n을 사용하여 첫 n줄을 건너 뛸 수 있다</code></strong>. 또는 <strong><code>comment = “#”을 사용하여 #으로 시작하는 모든 줄을 무시할 수 있다</code></strong>.</p>
+<pre class="r"><code>read_csv(&quot;메타 데이터 첫 번쨰 행
+메타 데이터 두 번쨰 행
+         x,y,z
+         1,2,3&quot;, skip = 2)</code></pre>
+<pre><code>## # A tibble: 1 x 3
+##       x     y     z
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     1     2     3</code></pre>
+<pre class="r"><code>read_csv(&quot;# 건너뛰고 싶은 주석
+         x,y,z
+         1,2,3&quot;, comment = &quot;#&quot;)</code></pre>
+<pre><code>## # A tibble: 1 x 3
+##       x     y     z
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     1     2     3</code></pre>
+<ul>
+<li>데이터에 열 이름이 없을 수 있다, col_names = FALSE를 사용하면 read_csv()가 첫 행을 헤드로 취급하지 않고 대신 X1에서 Xn까지 순차적으로 이름을 붙인다.</li>
+</ul>
+<pre class="r"><code>read_csv(&quot;1,2,3\n4,5,6&quot;, col_names = FALSE)</code></pre>
+<pre><code>## # A tibble: 2 x 3
+##      X1    X2    X3
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     1     2     3
+## 2     4     5     6</code></pre>
+<ul>
+<li>(<strong><code>“\n”은 새줄을 추가하는 편리한 단축키</code></strong>이다. 195쪽의 ‘문자열 기초’에서 이 단축어와 문자열 이스케이프의 다른 유형에 대해 자세히 배운다.) 다른 방법으로는 <strong><code>col_names에 열 이름으로 사용할 문자형 백터를 전달</code></strong>할 수도 있다.</li>
+</ul>
+<pre class="r"><code>read_csv(&quot;1,2,3\n4,5,6&quot;, col_names = c(&quot;x&quot;, &quot;y&quot;, &quot;z&quot;))</code></pre>
+<pre><code>## # A tibble: 2 x 3
+##       x     y     z
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     1     2     3
+## 2     4     5     6</code></pre>
+<ul>
+<li>일반적으로 조정이 필요한 또 다른 <strong><code>옵션은 na</code></strong>이다. 파일에서 결측값을 나타내는데 사용되는 값(들)을 지정한다.</li>
+</ul>
+<pre class="r"><code>read_csv(&quot;a,b,c\n1,2,.&quot;, na = &quot;.&quot;)</code></pre>
+<pre><code>## # A tibble: 1 x 3
+##       a     b c    
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;
+## 1     1     2 NA</code></pre>
+<ul>
+<li>여기까지 배운 것들로 실제로 마주하게 될 csv 파일의 75% 정도를 불러올 수있다. 또한 탭으로 구분된 파일을 read_tsv()를 사용하여, 혹은 고정간격 파일을 read_fwf()를 사용하여 불러오는 데도 쉽게 적용할 수 있다. 더 복잡한 파일을 읽으려면 readr이 각 열을 파싱하여 R 백터로 바꾸는 방법에 대해 자세히 배워야 한다.</li>
+</ul>
+<div id="베이스-r과-비교" class="section level2">
+<h2><strong>8.2.1 베이스 R과 비교</strong></h2>
+<p>R을 이전부터 사용한 사람은 우리가 read.csv()를 사용하지 않는 이유가 궁금할 것이다. 다음과 같은 몇 가지 타당한 이유로 베이스 함수보다 readr 함수를 선호한다.</p>
+<ul>
+<li>일반적으로 베이스 함수보다 훨씬 더(~10배) 빠르다. 오래 걸리는 작업은 진행 표시줄을 통해 상황을 알 수 있다. 원시 속도(raw speed)로 작업하려면 <code>data.table::fread()</code>를 사용해보라. 이함수는 tidtvers에 잘 어울리지는 않지만, 훨씬 더 빠를 수 있다.</li>
+<li>티블을 생성한다. 문자 백터를 팩터형으로 변환하지도, 행 이름을 사용하거나 열 이름을 변경하지도 않는다. 베이스 R 함수는 변환, 변경하기 때문에 불편하다.</li>
+<li>좀더 재현 가능하다. 베이스 R 함수는 운영체제 및 환경 변수의 일부 동작을 상속하므로 자신의 컴퓨터에서 작동하는 불러오기 코드가 다른 사람의 컴퓨터에서 작동하지 않을 수 있다.</li>
+</ul>
 </div>
-<div id="gather와-spread" class="section level3">
-<h3>9.3 Gather()와 Spread()</h3>
-<p>모든 데이터가 타이디하게 정리가 되어있지않은지 의문이 들텐데 현실은 불행하게도 그렇지 않을것이다</p>
-<p>이유는 크게 두가지인데<br />
-- 대부분의 사람은 타이디 데이터의 원리에 익숙하지 않으며 데이터를 타이디하게 만드는데 시간을 쓰지않는다<br />
-- 데이터는 분석보다는 다른 용도에 편리하도록 구성되는 경우가 더 많다</p>
-<p>따라서 실제 분석에서는 데이터를 깔끔하게 정리하는작업이 필수이다</p>
-<p>이때 사용되는 두가지 중요한 함수가 Gather()와 Sperad()이다</p>
 </div>
-<div id="gather로-모으기" class="section level3">
-<h3>- 9.3.1 Gather()로 모으기</h3>
-<p>자주 생기는 문제가 데이터셋의 일부 열 이름이 변수 이름이 아니라 변수 값인 경우이다<br />
-table4a를 보면 열 이름 1999와 2000은 year 변수 값을 나타내며, 각 행은 하나가 아닌 두개의 관측값을 나타낸다</p>
-<pre class="r"><code>tidyr::table4a</code></pre>
-<pre><code>## # A tibble: 3 x 3
-##   country     `1999` `2000`
-## * &lt;chr&gt;        &lt;int&gt;  &lt;int&gt;
-## 1 Afghanistan    745   2666
-## 2 Brazil       37737  80488
-## 3 China       212258 213766</code></pre>
-<p>이같은 데이터셋을 깔끔하게 정리하려면 해당 열을 새로운 두 변수로 모아야한다<br />
-이를 위해 세가지 파라미터가 필요하다<br />
-<strong>- 변수가 아니라 값을 나타내는 열 집합, 여기에서는 열 1999와 열 2000</strong><br />
-<strong>- 열 이름 자리에 나타난 변수 이름, key라고 부르며 여기에서는 year</strong><br />
-<strong>- 셀에 값이 분산되어 있는 변수 이름, value라고 부르며 여기에서는 cases</strong></p>
-<pre class="r"><code>table4a %&gt;%
-  gather(&#39;1999&#39;, &#39;2000&#39;, key = &quot;year&quot;, value = &quot;cases&quot;)</code></pre>
-<pre><code>## # A tibble: 6 x 3
-##   country     year   cases
-##   &lt;chr&gt;       &lt;chr&gt;  &lt;int&gt;
-## 1 Afghanistan 1999     745
-## 2 Brazil      1999   37737
-## 3 China       1999  212258
-## 4 Afghanistan 2000    2666
-## 5 Brazil      2000   80488
-## 6 China       2000  213766</code></pre>
-<p>같은 방법으로 table4b도 정리가 가능하다</p>
-<pre class="r"><code>table4b %&gt;%
-  gather(&#39;1999&#39;, &#39;2000&#39;, key = &quot;year&quot;, value = &quot;population&quot;)</code></pre>
-<pre><code>## # A tibble: 6 x 3
-##   country     year  population
-##   &lt;chr&gt;       &lt;chr&gt;      &lt;int&gt;
-## 1 Afghanistan 1999    19987071
-## 2 Brazil      1999   172006362
-## 3 China       1999  1272915272
-## 4 Afghanistan 2000    20595360
-## 5 Brazil      2000   174504898
-## 6 China       2000  1280428583</code></pre>
-</div>
-<div id="spread로-펼치기" class="section level3">
-<h3>- 9.3.2 Spread()로 펼치기</h3>
-<p>펼치기는 모으기의 반대이다<br />
-관측값이 여러 행에 흩어져있을 때 사용한다<br />
-예를들어 table2를 보면</p>
-<pre class="r"><code>tidyr::table2</code></pre>
-<pre><code>## # A tibble: 12 x 4
-##    country      year type            count
-##    &lt;chr&gt;       &lt;int&gt; &lt;chr&gt;           &lt;int&gt;
-##  1 Afghanistan  1999 cases             745
-##  2 Afghanistan  1999 population   19987071
-##  3 Afghanistan  2000 cases            2666
-##  4 Afghanistan  2000 population   20595360
-##  5 Brazil       1999 cases           37737
-##  6 Brazil       1999 population  172006362
-##  7 Brazil       2000 cases           80488
-##  8 Brazil       2000 population  174504898
-##  9 China        1999 cases          212258
-## 10 China        1999 population 1272915272
-## 11 China        2000 cases          213766
-## 12 China        2000 population 1280428583</code></pre>
-<p>한 국가에 대한 한 해 관측값이 두 행에 흩어져있다<br />
-이것을 정리하기위해 먼저 Gather()와 비슷한 방식으로 표현방식을 분석한다 하지만 이번엔 파라미터가 두개만 있어도 된다<br />
-<strong>- 변수 이름을 포함하는 열 = key열, 여기에서는 type</strong><br />
-<strong>- 여러 변수를 형성하는 값을 포함하는 열 = value열, 여기에서는 count</strong></p>
-<p>파라미터를 정하면 spread()를 사용할 수 있다</p>
-<pre class="r"><code>table2 %&gt;%
-  spread(key = type, value = count)</code></pre>
-<pre><code>## # A tibble: 6 x 4
-##   country      year  cases population
-##   &lt;chr&gt;       &lt;int&gt;  &lt;int&gt;      &lt;int&gt;
-## 1 Afghanistan  1999    745   19987071
-## 2 Afghanistan  2000   2666   20595360
-## 3 Brazil       1999  37737  172006362
-## 4 Brazil       2000  80488  174504898
-## 5 China        1999 212258 1272915272
-## 6 China        2000 213766 1280428583</code></pre>
-<p>공통의 인수를 사용한다는것으로 알 수 있듯 Spread()와 Gather()는 상호보완 관계이다</p>
-</div>
-<div id="separate와-unite" class="section level3">
-<h3>9.4 Separate()와 Unite()</h3>
-<p>지금까지 table2와 table4를 정리했지만 table3은 정리하지않았다<br />
-table3의 문제는 두개의 변수가 하나의 열에 합쳐져 있다는것이다<br />
-이문제를 해결하려면 Separate() 함수를 사용하면 된다<br />
-또한 하나의 변수가 여러 열에 분산되어 있는 경우 사용하는 Unite() 함수도 알아보자</p>
-</div>
-<div id="separate로-분리하기" class="section level3">
-<h3>- 9.4.1 separate()로 분리하기</h3>
-<p>separate()는 구분문자가 나타나는 곳마다 쪼개서 하나의 열을 여러 열로 분리한다<br />
-table3의 rate열은 cases와 population 변수가 합쳐져있다 해당 열을 쪼개려면 분리하여 만들 열 이름을 지정해주면 된다</p>
-<pre class="r"><code>table3 %&gt;%
-  separate(rate, into = c(&quot;cases&quot;, &quot;population&quot;))</code></pre>
-<pre><code>## # A tibble: 6 x 4
-##   country      year cases  population
-##   &lt;chr&gt;       &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;     
-## 1 Afghanistan  1999 745    19987071  
-## 2 Afghanistan  2000 2666   20595360  
-## 3 Brazil       1999 37737  172006362 
-## 4 Brazil       2000 80488  174504898 
-## 5 China        1999 212258 1272915272
-## 6 China        2000 213766 1280428583</code></pre>
-<p>하지만 아직 문제가 있다 cases와 population의 열 유형이 문자형열로 설정되어 있다<br />
-이는 열의 유형을 그대로 유지하는 separate()의 기본동작이다 convert = TRUE를 하면 separate()이 더 나은 유형으로 변형한다</p>
-<pre class="r"><code>table3 %&gt;%
-  separate(
-    rate, into = c(&quot;cases&quot;, &quot;population&quot;),
-    convert = TRUE
-  )</code></pre>
-<pre><code>## # A tibble: 6 x 4
-##   country      year  cases population
-##   &lt;chr&gt;       &lt;int&gt;  &lt;int&gt;      &lt;int&gt;
-## 1 Afghanistan  1999    745   19987071
-## 2 Afghanistan  2000   2666   20595360
-## 3 Brazil       1999  37737  172006362
-## 4 Brazil       2000  80488  174504898
-## 5 China        1999 212258 1272915272
-## 6 China        2000 213766 1280428583</code></pre>
-<p>sep에 정수 백터를 입력하여 쪼갤수도 있다<br />
-이경우 양수값은 문자열의 가장 왼쪽 1부터, 음수 값은 문자열의 오른쪽 -1부터 시작한다<br />
-정수를 사용하여 문자열을 분리할 때, sep의 길이는 into의 이름개수보다 하나 작아야한다</p>
-<pre class="r"><code>table3 %&gt;%
-  separate(year, into =c(&quot;century&quot;, &quot;year&quot;), sep = 2)</code></pre>
-<pre><code>## # A tibble: 6 x 4
-##   country     century year  rate             
-##   &lt;chr&gt;       &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;            
-## 1 Afghanistan 19      99    745/19987071     
-## 2 Afghanistan 20      00    2666/20595360    
-## 3 Brazil      19      99    37737/172006362  
-## 4 Brazil      20      00    80488/174504898  
-## 5 China       19      99    212258/1272915272
-## 6 China       20      00    213766/1280428583</code></pre>
-<p>잘 쓰이지는 않지만 어떤 경우에는 유용하다</p>
-</div>
-<div id="unite로-결합하기" class="section level3">
-<h3>- 9.4.2 Unite()로 결합하기</h3>
-<p>unite()는 separate()의 반대이다<br />
-여러 열을 하나의 열로 결합한다<br />
-separate()보다는 드물게 필요하지만 유용하다</p>
-<p>unite()를 사용하여 마지막 예제에서 만든 century열과 year열을 합칠 수 있다<br />
-해당 데이터는 table5에 저장되어있다</p>
-<pre class="r"><code>tidyr::table5</code></pre>
-<pre><code>## # A tibble: 6 x 4
-##   country     century year  rate             
-## * &lt;chr&gt;       &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;            
-## 1 Afghanistan 19      99    745/19987071     
-## 2 Afghanistan 20      00    2666/20595360    
-## 3 Brazil      19      99    37737/172006362  
-## 4 Brazil      20      00    80488/174504898  
-## 5 China       19      99    212258/1272915272
-## 6 China       20      00    213766/1280428583</code></pre>
-<p>unite()를 사용하면</p>
-<pre class="r"><code>table5 %&gt;%
-  unite(new, century, year)</code></pre>
-<pre><code>## # A tibble: 6 x 3
-##   country     new   rate             
-##   &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;            
-## 1 Afghanistan 19_99 745/19987071     
-## 2 Afghanistan 20_00 2666/20595360    
-## 3 Brazil      19_99 37737/172006362  
-## 4 Brazil      20_00 80488/174504898  
-## 5 China       19_99 212258/1272915272
-## 6 China       20_00 213766/1280428583</code></pre>
-<p>다음과 같은 결과가 나온다<br />
-기본 설정은 합친 열의 값 사이에 언더바(_)를 붙이는 것이다<br />
-해당 기호가 필요하지 않으면 sep에 &quot;&quot;를 주어 삭제 할 수 있다</p>
-<pre class="r"><code>table5 %&gt;%
-  unite(new, century, year, sep =&quot;&quot;)</code></pre>
-<pre><code>## # A tibble: 6 x 3
-##   country     new   rate             
-##   &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;            
-## 1 Afghanistan 1999  745/19987071     
-## 2 Afghanistan 2000  2666/20595360    
-## 3 Brazil      1999  37737/172006362  
-## 4 Brazil      2000  80488/174504898  
-## 5 China       1999  212258/1272915272
-## 6 China       2000  213766/1280428583</code></pre>
-</div>
-<div id="결측값" class="section level3">
-<h3>9.5 결측값</h3>
-<p>데이터셋의 표현 방식을 변경하면 결측값에도 변화가 생긴다<br />
-데이터값은 다음의 두가지 방식으로 결측될 수 있다<br />
-<strong>-명시적 ,NA로 표시</strong><br />
-<strong>-암묵적 ,그냥 빈칸</strong></p>
-<pre class="r"><code>stocks &lt;- tibble(
-  year   = c(2015, 2015, 2015, 2015, 2016, 2016, 2016),
-  qtr    = c(   1,    2,    3,    4,    2,    3,    4),
-  return = c(1.88, 0.59, 0.35,   NA, 0.92, 0.17, 2.66)
+<div id="백터-파싱하기" class="section level1">
+<h1><strong>8.3 백터 파싱하기</strong></h1>
+<p>readr이 디스크에서 파일을 읽는 방법에 대해 깊이 알아보기 전에, 잠깐 벗어나서 <strong><code>parse_*()</code></strong> 함수에 대해 살펴볼 필요가 있다. 이 함수들은 문자형 백터를 일력으로 하여 <strong><code>논리형, 정수형 또는 날짜형</code></strong>과 같은 좀 더 특수화된 백터를 반환한다.</p>
+<pre class="r"><code>str(parse_logical(c(&quot;TRUE&quot;, &quot;FALSE&quot;, &quot;NA&quot;)))</code></pre>
+<pre><code>##  logi [1:3] TRUE FALSE NA</code></pre>
+<pre class="r"><code>str(parse_integer(c(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;)))</code></pre>
+<pre><code>##  int [1:3] 1 2 3</code></pre>
+<pre class="r"><code>str(parse_date(c(&quot;2010-01-01&quot;, &quot;1979-10-14&quot;)))</code></pre>
+<pre><code>##  Date[1:2], format: &quot;2010-01-01&quot; &quot;1979-10-14&quot;</code></pre>
+<ul>
+<li>이 함수들은 독립적으로도 유용하지만, readr의 중요한 구성요소이기도 하다. 이 절에서는 개별 파서(parser)가 어떻게 동작하는지를 우선 배우고, 다음 절에서 개별 파서들이 어떻게 구성되어 파일 전체를 파싱하는지 살펴볼 것이다 tidyverse의 모든 함수와 마찬가지로, parse_*() 함수는 동일한 형태이다. 즉, 첫 번째 인수는 파싱할 문자형 벡터이며 na인수는 결측으로 처리되어야 하는 문자열을 지정한다.</li>
+</ul>
+<pre class="r"><code>parse_integer(c(&quot;1&quot;, &quot;231&quot;, &quot;.&quot;, &quot;456&quot;), na = &quot;.&quot;)</code></pre>
+<pre><code>## [1]   1 231  NA 456</code></pre>
+<ul>
+<li>파싱에 실패하면 경고 메시지가 나타난다.</li>
+</ul>
+<pre class="r"><code>x &lt;- parse_integer(c(&quot;123,&quot;, &quot;345&quot;, &quot;abc&quot;, &quot;123.45&quot; ))</code></pre>
+<ul>
+<li>이런 경우에는 출력에서 누락될 것이다.</li>
+</ul>
+<pre class="r"><code>x</code></pre>
+<pre><code>## [1]  NA 345  NA  NA
+## attr(,&quot;problems&quot;)
+## # A tibble: 3 x 4
+##     row   col expected               actual
+##   &lt;int&gt; &lt;int&gt; &lt;chr&gt;                  &lt;chr&gt; 
+## 1     1    NA no trailing characters ,     
+## 2     3    NA an integer             abc   
+## 3     4    NA no trailing characters .45</code></pre>
+<ul>
+<li>파싱에 실패한 경우가 많으면 problems()를 사용하여 실패 전체를 가져와야 한다. problems()는 티블을 반환하면, dplyr로 작업할 수 있다.</li>
+</ul>
+<pre class="r"><code>problems(x)</code></pre>
+<pre><code>## # A tibble: 3 x 4
+##     row   col expected               actual
+##   &lt;int&gt; &lt;int&gt; &lt;chr&gt;                  &lt;chr&gt; 
+## 1     1    NA no trailing characters ,     
+## 2     3    NA an integer             abc   
+## 3     4    NA no trailing characters .45</code></pre>
+<p>파서를 잘 활용하려면 어떤 종류가 있는지, 각종 입력 유형을 어떻게 다루는지를 잘 이해해야 한다. 특별히 중요한 8개의 파서가 있다.</p>
+<ul>
+<li>parse_logical()과 parse_integer()는 각각 논리형 및 정수형을 파싱한다. 기본적으로 이 파서에 잘못될 수 있는 것은 없으므로 여기서 더 설명하지 않겠다.</li>
+<li>parse_double()은 엄격한 수치형 파서이고, parse_number()는 유연한 수치형 파서이다. 이들은 예상보다 더 복잡하다. 왜냐하면 세계 여러 지역이 각자 다른 방식으로 숫자를 쓰기 떄문이다.</li>
+<li>parse_character()는 너무 단순해서 필요 없을 것 같다고 생각할지도 모른다. 그러나 어떤 복잡성 때문에 이 파서가 매우 중요하다. 바로 문자 인코딩이 그것이다.</li>
+<li>parse_factor()는 팩터형을 생성하는데, 팩터형은 R이 미리 정해지고 알려진 값으로 범주형 변수를 나타내기 위해 사용하는 데이터 구조이다.</li>
+<li>parse_datetime(), parse_date(), pare_time()을 사용하면 다양한 날짜와 시각 데이터를 파싱할 수 있다. 날짜를 쓰는 방법을 다양하기 때문에 이 함수들이 가장 복잡하다. 다음 절들에서 더 자세히 살펴 보기로 하자</li>
+</ul>
+<div id="숫자" class="section level2">
+<h2>8.3.1 숫자</h2>
+<p>숫자 파싱은 간단해 보이지만, 다음의 세가지 문제 떄문에 까다롭다.</p>
+<ul>
+<li>세계 여러 지역에서 사람들은 숫자를 다르게 쓴다. 예를 들어 어떤 국가에서는 실수의 정수 부분과 소수 부분 사이에.를 쓰고 다른 국가에서는 ,를 쓴다.</li>
+<li>숫자는‘$1000’,‘10%’와 같이 단위를 나타내는 다른 문자가 붙어있을 때가 많다.</li>
+<li>숫자는 ‘1,000,000’과 같이 쉽게 읽을 수 있도록 ‘그룹화’ 문자가 포함되는 경우가 많다. 이러한 그룹화 문자는 국가마다 다르다.</li>
+</ul>
+<p>첫 번째 문제를 해결하기 위해서 readr은 지역에 따라 파싱 옵션을 지정하는 객체인 ‘로캘(locale)’이라는 개념을 사용한다. 숫자를 파싱할 때 가장 중요한 옵션은 소수점으로 사용하는 문자이다. 새로운 로캘을 생성하고 decimal_mark 인수를 설정하여 기본값인 .를 다른값으로 재정의할 수 있다.</p>
+<pre class="r"><code>parse_double(&quot;1.23&quot;)</code></pre>
+<pre><code>## [1] 1.23</code></pre>
+<pre class="r"><code>parse_double(&quot;1,23&quot;, locale = locale(decimal_mark = &quot;,&quot;))</code></pre>
+<pre><code>## [1] 1.23</code></pre>
+<p>readr의 기본 로캘은 미국 중심인데, 왜냐하면 일반적으로 R은 미국 중심이기 때문이다(즉, 베이스R의 문서가 미국식 영어로 작성되었다). 다른 방법은 운영체제의 기본값을 추측하여 시도하는 것이다. 이러한 방법은 잘 동작하지 않고, 더 중요한 코드가 취약하게 된다. 자신의 컴퓨터에서 동작하더라도 코드를 다른 국가의 동료에게 이메일로 보낼 때 오류가 발생할 수 있다. 두 번째 문제를 처리하는 parse_number()는 숫자 앞뒤의 비수치 문자(non-nu-meric character)를 무시한다. 통화 및 백분율에 특히 유용하지만, 텍스트에 포함된 숫자를 추출하는데도 효과적이다.</p>
+<pre class="r"><code>parse_number(&quot;$100&quot;)</code></pre>
+<pre><code>## [1] 100</code></pre>
+<pre class="r"><code>parse_number(&quot;20%&quot;)</code></pre>
+<pre><code>## [1] 20</code></pre>
+<pre class="r"><code>parse_number(&quot;It cost $123.45&quot;)</code></pre>
+<pre><code>## [1] 123.45</code></pre>
+<p>마지막 문제는 parse_number()와 로캘을 조합하여 parse_number()가 ‘그룹화 마크’를 무시하도록 함으로써 해결할 수 있다.</p>
+<p>-미주 방식</p>
+<pre class="r"><code>parse_number(&quot;$123,456,789&quot;)</code></pre>
+<pre><code>## [1] 123456789</code></pre>
+<p>-유럽의 많은 국가 방식</p>
+<pre class="r"><code>parse_number(
+  &quot;123.456.789&quot;,
+  locale = locale(grouping_mark = &quot;.&quot;)
 )</code></pre>
-<p>이 데이터셋에는 두가지 결측값이 있다<br />
-하나는 2015년 4분기의 NA, 다른 하나는 2016 1분기의 데이터이다</p>
-<p>데이터셋 표현법으로 암묵적값을 명시적으로 만들 수 있다 예를 들어 연도를 열로 넣어 결측값을 명시적으로 만들 수 있다</p>
-<pre class="r"><code>stocks %&gt;%
-  spread(year, return)</code></pre>
-<pre><code>## # A tibble: 4 x 3
-##     qtr `2015` `2016`
-##   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
-## 1     1   1.88  NA   
-## 2     2   0.59   0.92
-## 3     3   0.35   0.17
-## 4     4  NA      2.66</code></pre>
-<p>명시적 결측값은 어떤 데이터에서는 중요하지 않을 수 있으므로<br />
-gather()에서 na.rm = TRUE를 설정해서 암묵적 결측값으로 변경할 수 있다</p>
-<pre class="r"><code>stocks %&gt;%
-  spread(year, return) %&gt;%
-  gather(year, return, &#39;2015&#39;:&#39;2016&#39;, na.rm = TRUE)</code></pre>
-<pre><code>## # A tibble: 6 x 3
-##     qtr year  return
-##   &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt;
-## 1     1 2015    1.88
-## 2     2 2015    0.59
-## 3     3 2015    0.35
-## 4     2 2016    0.92
-## 5     3 2016    0.17
-## 6     4 2016    2.66</code></pre>
-<p>타이디 데이터에서 결측값을 명시적으로 표현하는 중요한 도구로 complete()도 있다<br />
-complete()는 열집합을 입력으로 하여, 고유한 조합을 모두 찾는다<br />
-그런 다음 원본 데이터셋에 모든 값이 포함되도록 필요한 곳에 명시적 NA를 채운다</p>
-<pre class="r"><code>stocks %&gt;%
-  complete(year, qtr)</code></pre>
-<pre><code>## # A tibble: 8 x 3
-##    year   qtr return
-##   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
-## 1  2015     1   1.88
-## 2  2015     2   0.59
-## 3  2015     3   0.35
-## 4  2015     4  NA   
-## 5  2016     1  NA   
-## 6  2016     2   0.92
-## 7  2016     3   0.17
-## 8  2016     4   2.66</code></pre>
-<p>fill()은 결측치를 가장 최근의 비결측값으로 채운다</p>
-<pre class="r"><code>treatment &lt;- tribble(
-  ~ person,           ~treatment, ~response,
-  &quot;Derrick Whitmore&quot;, 1,          7,        
-  NA,                 2,          10,
-  NA,                 3,          9,
-  &quot;Katherine Burke&quot;,  1,          4
+<pre><code>## [1] 123456789</code></pre>
+<p>스위스 방식</p>
+<pre class="r"><code>parse_number(
+  &quot;123&#39;456&#39;789&quot;,
+  locale = locale(grouping_mark = &quot;&#39;&quot;)
 )</code></pre>
-<p>위의 데이터를 보면 두번째, 세번째의 person 값이 결측값이다<br />
-해당 데이터에 fill()을 사용할 경우</p>
-<pre class="r"><code>treatment %&gt;%
-  fill(person)</code></pre>
-<pre><code>## # A tibble: 4 x 3
-##   person           treatment response
-##   &lt;chr&gt;                &lt;dbl&gt;    &lt;dbl&gt;
-## 1 Derrick Whitmore         1        7
-## 2 Derrick Whitmore         2       10
-## 3 Derrick Whitmore         3        9
-## 4 Katherine Burke          1        4</code></pre>
-<p>이와같이 가장 최근의 값으로 결측치가 채워진것을 볼 수 있다</p>
+<pre><code>## [1] 123456789</code></pre>
 </div>
-<div id="사례연구" class="section level3">
-<h3>9.6 사례연구</h3>
-<p>지금까지 배운것을 정리해보자<br />
-<strong>tidyr::who</strong> 데이터셋에는 결핵 사례가 연도,국가,나이,성별 및 진단방법별로 세분화되어있다<br />
-이 데이터셋에는 역학정보가 풍부하게 있지만, 제공된 데이터로 작업을 하는것은 쉽지않다</p>
-<pre class="r"><code>tidyr::who</code></pre>
-<pre><code>## # A tibble: 7,240 x 60
-##    country iso2  iso3   year new_sp_m014 new_sp_m1524 new_sp_m2534 new_sp_m3544
-##    &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;int&gt;       &lt;int&gt;        &lt;int&gt;        &lt;int&gt;        &lt;int&gt;
-##  1 Afghan~ AF    AFG    1980          NA           NA           NA           NA
-##  2 Afghan~ AF    AFG    1981          NA           NA           NA           NA
-##  3 Afghan~ AF    AFG    1982          NA           NA           NA           NA
-##  4 Afghan~ AF    AFG    1983          NA           NA           NA           NA
-##  5 Afghan~ AF    AFG    1984          NA           NA           NA           NA
-##  6 Afghan~ AF    AFG    1985          NA           NA           NA           NA
-##  7 Afghan~ AF    AFG    1986          NA           NA           NA           NA
-##  8 Afghan~ AF    AFG    1987          NA           NA           NA           NA
-##  9 Afghan~ AF    AFG    1988          NA           NA           NA           NA
-## 10 Afghan~ AF    AFG    1989          NA           NA           NA           NA
-## # ... with 7,230 more rows, and 52 more variables: new_sp_m4554 &lt;int&gt;,
-## #   new_sp_m5564 &lt;int&gt;, new_sp_m65 &lt;int&gt;, new_sp_f014 &lt;int&gt;,
-## #   new_sp_f1524 &lt;int&gt;, new_sp_f2534 &lt;int&gt;, new_sp_f3544 &lt;int&gt;,
-## #   new_sp_f4554 &lt;int&gt;, new_sp_f5564 &lt;int&gt;, new_sp_f65 &lt;int&gt;,
-## #   new_sn_m014 &lt;int&gt;, new_sn_m1524 &lt;int&gt;, new_sn_m2534 &lt;int&gt;,
-## #   new_sn_m3544 &lt;int&gt;, new_sn_m4554 &lt;int&gt;, new_sn_m5564 &lt;int&gt;,
-## #   new_sn_m65 &lt;int&gt;, new_sn_f014 &lt;int&gt;, new_sn_f1524 &lt;int&gt;,
-## #   new_sn_f2534 &lt;int&gt;, new_sn_f3544 &lt;int&gt;, new_sn_f4554 &lt;int&gt;,
-## #   new_sn_f5564 &lt;int&gt;, new_sn_f65 &lt;int&gt;, new_ep_m014 &lt;int&gt;,
-## #   new_ep_m1524 &lt;int&gt;, new_ep_m2534 &lt;int&gt;, new_ep_m3544 &lt;int&gt;,
-## #   new_ep_m4554 &lt;int&gt;, new_ep_m5564 &lt;int&gt;, new_ep_m65 &lt;int&gt;,
-## #   new_ep_f014 &lt;int&gt;, new_ep_f1524 &lt;int&gt;, new_ep_f2534 &lt;int&gt;,
-## #   new_ep_f3544 &lt;int&gt;, new_ep_f4554 &lt;int&gt;, new_ep_f5564 &lt;int&gt;,
-## #   new_ep_f65 &lt;int&gt;, newrel_m014 &lt;int&gt;, newrel_m1524 &lt;int&gt;,
-## #   newrel_m2534 &lt;int&gt;, newrel_m3544 &lt;int&gt;, newrel_m4554 &lt;int&gt;,
-## #   newrel_m5564 &lt;int&gt;, newrel_m65 &lt;int&gt;, newrel_f014 &lt;int&gt;,
-## #   newrel_f1524 &lt;int&gt;, newrel_f2534 &lt;int&gt;, newrel_f3544 &lt;int&gt;,
-## #   newrel_f4554 &lt;int&gt;, newrel_f5564 &lt;int&gt;, newrel_f65 &lt;int&gt;</code></pre>
-<p>이 데이터가 전형적으로 만나게될 데이터의 표본이다<br />
-열 중복, 이상한 가변 코드 및 다수의 결측값이 있다<br />
-즉, who데이터는 너무 지저분해서 여러 단계를 통해 정리해야한다<br />
-처음은 변수가 아닌 열을 모으는것으로 시작하는것이 좋다<br />
-다음을 살펴보자<br />
-<strong>- country와 iso2, iso3은 국가를 중복해서 지정하는 세 개의 변수</strong><br />
-<strong>- year는 연도를 나타낸 변수</strong><br />
-<strong>- 다른 열은 아직 알 수 없지만 new_sp_m014등의 구조를 보면 이들은 변수가 아닌 값이다</strong><br />
-따라서 new_sp_m014부터 newrel_f65까지의 모든 열을 모을 필요가 있다<br />
-이 값이 무엇을 나타내는지 아직 모르므로 ’key’라는 일반적인 이름을 붙이고<br />
-사례 수는 ’cases’를 사용한다<br />
-현재 결측값이 많으므로 na.rm을 사용하여 있는값만 집중할 것이다</p>
-<pre class="r"><code>who1 &lt;- who %&gt;%
-  gather(
-    new_sp_m014:newrel_f65, key = &quot;key&quot;,
-    value = &quot;cases&quot;,
-    na.rm = TRUE
-  )
-who1</code></pre>
-<pre><code>## # A tibble: 76,046 x 6
-##    country     iso2  iso3   year key         cases
-##    &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; &lt;int&gt; &lt;chr&gt;       &lt;int&gt;
-##  1 Afghanistan AF    AFG    1997 new_sp_m014     0
-##  2 Afghanistan AF    AFG    1998 new_sp_m014    30
-##  3 Afghanistan AF    AFG    1999 new_sp_m014     8
-##  4 Afghanistan AF    AFG    2000 new_sp_m014    52
-##  5 Afghanistan AF    AFG    2001 new_sp_m014   129
-##  6 Afghanistan AF    AFG    2002 new_sp_m014    90
-##  7 Afghanistan AF    AFG    2003 new_sp_m014   127
-##  8 Afghanistan AF    AFG    2004 new_sp_m014   139
-##  9 Afghanistan AF    AFG    2005 new_sp_m014   151
-## 10 Afghanistan AF    AFG    2006 new_sp_m014   193
-## # ... with 76,036 more rows</code></pre>
-<p>새로운 key 열의 값을 세어서 값의 구조에 대한 힌트를 얻을 수 있다</p>
-<pre class="r"><code>who1 %&gt;%
-  count(key)</code></pre>
-<pre><code>## # A tibble: 56 x 2
-##    key              n
-##    &lt;chr&gt;        &lt;int&gt;
-##  1 new_ep_f014   1032
-##  2 new_ep_f1524  1021
-##  3 new_ep_f2534  1021
-##  4 new_ep_f3544  1021
-##  5 new_ep_f4554  1017
-##  6 new_ep_f5564  1017
-##  7 new_ep_f65    1014
-##  8 new_ep_m014   1038
-##  9 new_ep_m1524  1026
-## 10 new_ep_m2534  1020
-## # ... with 46 more rows</code></pre>
-<p>데이터 사전을 이용해 new_sp_m014등의 열이 무엇을 의미하는지 알아보자</p>
-<p><strong>?who</strong></p>
-<p><strong>데이터 사전은 다음을 알려준다</strong><br />
-- 처음의 세글자는 결핵사례가 새로운 사례인지 과거 사례인지 나타낸다(이 데이터셋에서는 새로운 사례만 포함한다)<br />
-- 그다음 두글자는 결핵의 유형을 나타낸다<br />
-- 여섯번째 글자는 환자의 성별을 나타낸다<br />
-- 나머지 숫자는 연령대를 나타낸다</p>
-<p>사례중 newrel의 명칭에 일관성이 없으므로 다른 열의 형식에 맞춰서 new_rel로 바꾼다</p>
-<pre class="r"><code>who2 &lt;- who1 %&gt;%
-  mutate(key = stringr::str_replace(key, &quot;newrel&quot;, &quot;new_rel&quot;))
-who2</code></pre>
-<pre><code>## # A tibble: 76,046 x 6
-##    country     iso2  iso3   year key         cases
-##    &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; &lt;int&gt; &lt;chr&gt;       &lt;int&gt;
-##  1 Afghanistan AF    AFG    1997 new_sp_m014     0
-##  2 Afghanistan AF    AFG    1998 new_sp_m014    30
-##  3 Afghanistan AF    AFG    1999 new_sp_m014     8
-##  4 Afghanistan AF    AFG    2000 new_sp_m014    52
-##  5 Afghanistan AF    AFG    2001 new_sp_m014   129
-##  6 Afghanistan AF    AFG    2002 new_sp_m014    90
-##  7 Afghanistan AF    AFG    2003 new_sp_m014   127
-##  8 Afghanistan AF    AFG    2004 new_sp_m014   139
-##  9 Afghanistan AF    AFG    2005 new_sp_m014   151
-## 10 Afghanistan AF    AFG    2006 new_sp_m014   193
-## # ... with 76,036 more rows</code></pre>
-<p>다음으로는 key열의 값을 사례유형, 결핵유형, 성별나이로 분리한다</p>
-<pre class="r"><code>who3 &lt;- who2 %&gt;%
-  separate(key, c(&quot;new&quot;, &quot;type&quot;, &quot;sexage&quot;), sep =&quot;_&quot;)
-who3</code></pre>
-<pre><code>## # A tibble: 76,046 x 8
-##    country     iso2  iso3   year new   type  sexage cases
-##    &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;int&gt;
-##  1 Afghanistan AF    AFG    1997 new   sp    m014       0
-##  2 Afghanistan AF    AFG    1998 new   sp    m014      30
-##  3 Afghanistan AF    AFG    1999 new   sp    m014       8
-##  4 Afghanistan AF    AFG    2000 new   sp    m014      52
-##  5 Afghanistan AF    AFG    2001 new   sp    m014     129
-##  6 Afghanistan AF    AFG    2002 new   sp    m014      90
-##  7 Afghanistan AF    AFG    2003 new   sp    m014     127
-##  8 Afghanistan AF    AFG    2004 new   sp    m014     139
-##  9 Afghanistan AF    AFG    2005 new   sp    m014     151
-## 10 Afghanistan AF    AFG    2006 new   sp    m014     193
-## # ... with 76,036 more rows</code></pre>
-<p>다음은 필요없는 열을 제거한다<br />
-이 데이터셋에서 new, iso2, iso3은 의미없는 데이터이므로 삭제하는게 가독성이 좋을것이다<br />
-단, 먼저 정말로 new 타입의 데이터 밖에 없는지 확인 후 삭제한다</p>
-<pre class="r"><code>who3 %&gt;%
-  count(new)</code></pre>
+<div id="문자열" class="section level2">
+<h2><strong>8.3.2 문자열</strong></h2>
+<p>parse_character()는 정말 단순해 보인다. 입력을 단순히 반환하는 것 아닌가. 그런데 불행하게도 삶은 그렇게 호락호락하지 않다. 같은 문자열을 나타내는 방법은 여러 가지이다. 이게 무슨 이야기인지 이해하려면 컴퓨터가 문자열을 표시하는 방법에 대해 깊고 상세하게 들어가야 한다. R에서는 charToRaw()를 사용하여 문자열의 기본 표현을 볼 수 있다. <ins><font size="2">(charToRaw() = 원시 벡터로 또는 원시 벡터로 변환)</font></ins></p>
+<pre class="r"><code>charToRaw(&quot;Hadley&quot;)</code></pre>
+<pre><code>## [1] 48 61 64 6c 65 79</code></pre>
+<p>각 16진수 값은 정보 바이트를 나타낸다. 예를 들면 48은 H를 나타내고, 61은 a를 나타낸다. 16진수 수치를 문자로 매핑하는 것을 인코딩이라고 하며, 앞의 인코딩은 ASCII(아스키)라고 한다. ASCII는 정보 교환을 위한 미국 표준 코드(American Standard Code for Information Interchange)의 줄임말이며 따라서 영문자를 잘 표현한다.</p>
+<p>영어가 아닌 다른 언어의 경우 더욱 복잡해진다. 컴퓨터 시대 초창기에는 비영어권 문자 인코딩을 위한 여러 표준 규격이 있었다. 문자열을 정확하게 해석하기 위해서는 값과 인코딩을 모두 알아야했다.</p>
+<p>예를 들어 두 가지 일반적인 인코딩은 Latinl(ISO-8859-1, 서유럽 언어들에서 사용)과 Latin2(ISO-8859-2, 동유럽 언어들에서 사용)이다. Latinl에서 바이트b1은 ‘±’이지만, Latin2에서는 ‘ą’이다. 다행히 오늘날에는 거의 모든 곳에서 지원되는 하나의 표준인 UTF-8이 있다. UTF-8은 오늘날 인간이 사용하는 거의 모든 문자와 기타 기호들(예: 이모티콘)을 인코딩할 수 있다. readr은 모든 곳에서 UTF-8을 사용한다. 데이터를 읽을 때 UTF-8이라고 가정하며, 쓸 때는 항상 사용한다. UTF-8은 좋은 기본값이지만, 이를 인식하지 못하는 구형 시스템에서 생성된 데이터에 사용할 수 없다. 이런 상황이면 문자열을 화면 출력할 때 이상하게 보인다. 한두 개의 문자만 엉망이 될 수도 있고, 완전히 외계어들을 볼 수도 있다. 다음의 예를 보자.</p>
+<pre class="r"><code>x1 &lt;- &quot; El Ni\xf1o was particularly bad this year&quot;
+x2 &lt;- &quot;\x82\xb1\x82\xf1\x82\xc9\x82\xbf\x82\xcd&quot;
+
+x1</code></pre>
+<pre><code>## [1] &quot; El Ni\xf1o was particularly bad this year&quot;</code></pre>
+<pre class="r"><code>x2</code></pre>
+<pre><code>## [1] &quot;궞귪궸궭궼&quot;</code></pre>
+<p>문제를 해결하려면 parse_character()에서 인코딩을 지정해야 한다.</p>
+<pre class="r"><code>parse_character(x1, locale = locale(encoding = &quot;latin1&quot;))</code></pre>
+<pre><code>## [1] &quot;El Nino was particularly bad this year&quot;</code></pre>
+<pre class="r"><code>parse_character(x2, locale = locale(encoding = &quot;shift-JIS&quot;))</code></pre>
+<pre><code>## [1] &quot;こんにちは&quot;</code></pre>
+<p>올바른 인코딩을 어떻게 찾을 수 있을까? 운이 좋다면 데이터 문서의 어딘가에 포함되었을 것이다. 하지만 불행하게도 그런 경우는 거의 없으므로, readr는 guess-encoding()을 제공하여 사용자가 알아낼 수 있도록 도와준다. 이것은 완벽하지도 않고, (앞의 사례와 달리) 텍스트가 많아야 더 잘 작동하지만, 한번 시도 해볼 만한 방법이다. 올바른 인코딩을 찾기 전에 몇 가지 다른 인코딩을 시도해 보라.</p>
+<pre class="r"><code>guess_encoding(charToRaw(x1))</code></pre>
+<pre><code>## # A tibble: 3 x 2
+##   encoding   confidence
+##   &lt;chr&gt;           &lt;dbl&gt;
+## 1 ISO-8859-1       0.52
+## 2 ISO-8859-2       0.22
+## 3 ISO-8859-9       0.22</code></pre>
+<pre class="r"><code>guess_encoding(charToRaw(x2))</code></pre>
 <pre><code>## # A tibble: 1 x 2
-##   new       n
-##   &lt;chr&gt; &lt;int&gt;
-## 1 new   76046</code></pre>
-<pre class="r"><code>who4 &lt;- who3 %&gt;%
-  select(-new, -iso2, -iso3)</code></pre>
-<p>마지막으로 성별나이 열을 성별, 나이로 분리한다</p>
-<pre class="r"><code>who5 &lt;- who4 %&gt;%
-  separate(sexage, c(&quot;sex&quot;, &quot;age&quot;), sep = 1)
-who5</code></pre>
-<pre><code>## # A tibble: 76,046 x 6
-##    country      year type  sex   age   cases
-##    &lt;chr&gt;       &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;int&gt;
-##  1 Afghanistan  1997 sp    m     014       0
-##  2 Afghanistan  1998 sp    m     014      30
-##  3 Afghanistan  1999 sp    m     014       8
-##  4 Afghanistan  2000 sp    m     014      52
-##  5 Afghanistan  2001 sp    m     014     129
-##  6 Afghanistan  2002 sp    m     014      90
-##  7 Afghanistan  2003 sp    m     014     127
-##  8 Afghanistan  2004 sp    m     014     139
-##  9 Afghanistan  2005 sp    m     014     151
-## 10 Afghanistan  2006 sp    m     014     193
-## # ... with 76,036 more rows</code></pre>
+##   encoding confidence
+##   &lt;chr&gt;         &lt;dbl&gt;
+## 1 KOI8-R         0.42</code></pre>
+<p>guess_encoding()의 첫 번째 인수로는 파일의 경로 혹은, 이 예제와 같이 원시벡터(문자열이 이미 R에 있는 경우 유용함)가 될 수 있다. 인코딩은 방대하고 복잡한 주제이며, 여기서 우리는 단지 겉핥기만 한 것이다. 더 배우고 싶으면 <a href="https://kunststube.net/encoding" class="uri">https://kunststube.net/encoding</a> 에서 자세한 설명을 읽어 보길 추천한다.</p>
 </div>
-<div id="타이디하지-않은-데이터" class="section level3">
-<h3>9.7 타이디하지 않은 데이터</h3>
-<p>다른 주제로 넘어 가기 전에 타이디하지 않은 데이터에 대해 간단히 이야기 해보자<br />
-이 장의 앞부분에서 타이디하지 않은 데이터를 의미하기 위해 부정적인 용어인 ’지저분한’을 사용했다<br />
-이는 과도하게 단순화한 것이다. 타이디 데이터가 아니더라도 유용하고 잘 구성된, 많은 데이터 구조가 있다<br />
-다른 데이터 구조를 사용하는 데는 주된 이유가 두 가지이다<br />
-- 다른 표현 방식이 성능상, 저장용량상 장점이 클 수 있다<br />
-- 전문 분야에서 독자적으로 발전시킨 데이터 저장 규칙이 타이디 데이터의 규칙과 다를 수 있다<br />
-이런 이유로 인해 티블(또는 데이터프레임)이 아닌 다른 것이 필요해진다<br />
-데이터가 관측값과 변수로 구성된 구조에 자연스럽게 맞아떨어진다면 타이디 데이터가 기본 선택이어야 한다고 생각한다<br />
-그러나 다른 구조를 사용하는 데도 그럴만한 충분한 이유가 있다<br />
-타이디 데이터만이 유일한 방법은 아니다.</p>
+<div id="팩터형" class="section level2">
+<h2><strong>8.3.3 팩터형</strong></h2>
+<p>R은 팩터형을 사용하여, 가질 수 있는 값을 미리 알고 있는 범주형 변수를 나타낸다. 예상치 못한 값이 있을 때마다 경고를 생성하려면 parse_factor()에 가질 수 있는 레벨의 백터를 제공하면 된다.</p>
+<p>fruit &lt;- c(“apple”, “banana”)</p>
+<pre class="r"><code>parse_factor(c(&quot;apple&quot;, &quot;banana&quot;, &quot;bananana&quot;), levels = fruit)</code></pre>
+<pre><code>## [1] apple  banana &lt;NA&gt;  
+## attr(,&quot;problems&quot;)
+## # A tibble: 1 x 4
+##     row   col expected           actual  
+##   &lt;int&gt; &lt;int&gt; &lt;chr&gt;              &lt;chr&gt;   
+## 1     3    NA value in level set bananana
+## 80 Levels: apple apricot avocado banana bell pepper bilberry ... watermelon</code></pre>
+<p>그러나 입력값에 문제가 많이 있는 경우에는, 그 입력값을 우선 문자형 백터로 남겨두고 11장과 12장에서 배울 도구를 사용하여 정리하는 것이 쉬울 때가 많다.</p>
+</div>
+<div id="데이트형-데이트-타임형-타임형" class="section level2">
+<h2><strong>8.3.4 데이트형, 데이트-타임형, 타임형</strong></h2>
+<p>원하는 것이 날짜(1970-01-01 이후의 일 수) 날짜-시간(1970-01-01 자정 이후의 초 수), 시간(자정 이후의 초 수)인지에 따라 세 가지 파서 중에서 선택하면 된다. 추가 인수 없는 각 파서의 동작은 다음과 같다 - parse_datetime()은 ISO 8601 날짜-시간을 입력으로 한다. ISO 8601은 국제 표준인데 날짜가 가장 큰 것부터 가장 작은 것(즉, 년, 월, 일, 시, 분, 초)으로 구성된다.</p>
+<pre class="r"><code>parse_datetime(&quot;2010-10-01T2010&quot;)</code></pre>
+<pre><code>## [1] &quot;2010-10-01 20:10:00 UTC&quot;</code></pre>
+<pre class="r"><code>parse_datetime(&quot;20101010&quot;)</code></pre>
+<pre><code>## [1] &quot;2010-10-10 UTC&quot;</code></pre>
+<p>ISO 8601은 가장 중요한 날짜/시간 표준이며, 날짜와 시간을 자주 다루는 경우 <a href="https://en.wikipedia.org/wiki/ISO_8601" class="uri">https://en.wikipedia.org/wiki/ISO_8601</a> 을 읽어볼 것을 추천한다.</p>
+<ul>
+<li>parse_date()는 네 자리 연도, -또는/, 월, -또는/, 날짜를 입력으로 한다.</li>
+</ul>
+<pre class="r"><code>parse_date(&quot;2010-10-01&quot;)</code></pre>
+<pre><code>## [1] &quot;2010-10-01&quot;</code></pre>
+<ul>
+<li>parse_time()은 시, :, 분 그리고 선택적으로 :, 초, 선택적으로 a.m/p.m 표시를 입력으로 한다.</li>
+</ul>
+<pre class="r"><code>library(hms)
+parse_time(&quot;01:10 am&quot;)</code></pre>
+<pre><code>## 01:10:00</code></pre>
+<pre class="r"><code>parse_time(&quot;20:10:01&quot;)</code></pre>
+<pre><code>## 20:10:01</code></pre>
+<p>베이스 R에는 시간 데이터를 위한 훌륭한 내장 클래스가 없기 때문에, 우리는 hms 페키지에서 제공되는 클래스를 사용한다.</p>
+<p>이러한 기본 설정으로 주어진 데이터를 처리하지 못한다면 다음의 요소들로 이루어진 자신만의 날짜-시간 형식(format)을 만들어 쓸 수 있다.</p>
+<pre class="r"><code>연
+%Y (4자리).
+%y (2자리, 00-69 -&gt; 2000-2069, 70-99 -&gt; 1970-1999).</code></pre>
+<pre class="r"><code>월
+%m (2자리).
+%b (“Jan”과 같이 축약된 명칭).
+%B (전체 명칭, “January”).</code></pre>
+<pre class="r"><code>일
+%d (2자리).
+%e (선택적 선행 공백)</code></pre>
+<pre class="r"><code>시간
+%H (0-23 시간 형식).
+%I (0-12, %P 와 함께 사용해야 함).
+%P (a.m/p.m 표시).
+%S (정수 초). 
+%OS (실수 초).
+%Z (시간대 [이름, 예, America/Chicago]), 참고: 줄임말에 주의하라. ‘EST’는 일광 절약 시간제가 없는 캐나다 표준 시간대임을 주의하라. 그것은 동부 표준시가 아니다! 254쪽의 ‘시간대’에서 이를 다시 살피보겠다.
+%z (UTC와의 오프셋, 예: +0800).</code></pre>
+<pre class="r"><code>숫자가 아닌 문자
+
+%. (숫자가 아닌 문자 하나를 건너뛴다).
+%* (숫자가 아닌 문자 모두를 건너뛴다).</code></pre>
+<p>올바를 포맷을 파악하는 가장 좋은 방법은 문자형 백터로 몇 가지 예제를 만들고, 파싱 함수 중 하나로 테스트 하는 것이다.</p>
+<pre class="r"><code>parse_date(&quot;01/02/15&quot;, &quot;%m/%d/%y&quot;)</code></pre>
+<pre><code>## [1] &quot;2015-01-02&quot;</code></pre>
+<pre class="r"><code>parse_date(&quot;01/02/15&quot;, &quot;%d/%m/%y&quot;)</code></pre>
+<pre><code>## [1] &quot;2015-02-01&quot;</code></pre>
+<pre class="r"><code>parse_date(&quot;01/02/15&quot;, &quot;%y/%m/%d&quot;)</code></pre>
+<pre><code>## [1] &quot;2001-02-15&quot;</code></pre>
+<p>비영어권의 월 이름에 %b 또는 %B를 사용하는 경우, locale()의 lang 인수를 설정해야 한다. date_names_langs()에 내장된 언어 목록을 보라. 자신의 언어가 아직 포함되어 있지 않았으면 date_names()를 사용하여 생성하라.</p>
+<pre class="r"><code>parse_date(&quot;1 janvier 2015&quot;, &quot;%d %B %Y&quot;, locale = locale(&quot;fr&quot;))</code></pre>
+<pre><code>## [1] &quot;2015-01-01&quot;</code></pre>
+</div>
+</div>
+<div id="파일-파싱하기" class="section level1">
+<h1><strong>8.4 파일 파싱하기</strong></h1>
+<p>이제까지 개별 백터를 파싱하는 방법을 배웠으므로, 처음으로 돌아가서 readr이 파일을 파싱하는 방법을 알아볼 차례이다. 이 절에서는 다음의 두 방법을 배운다.</p>
+<ul>
+<li>readr이 각 열의 유형을 자동으로 추측하는 방법</li>
+<li>기본 사양을 재정의하는 방법.</li>
+</ul>
+<div id="전략" class="section level2">
+<h2><strong>8.4.1 전략</strong></h2>
+<p>readr은 휴리스틱 방법을 사용하여 각 열의 유형을 파악한다. 첫 번째 1000행을 읽고(적절히 보수적인)휴리스틱 방법을 사용하여 각 열의 유형을 찾는다. guess_parser()(readr의 추정을 반환)와 parse_guess()(앞의 추정을 사용하여 열을 파싱)를 사용하여 문자형 백터에 이 과정을 재현해볼 수 있다.</p>
+<pre class="r"><code>guess_parser(&quot;2010-10-01&quot;)</code></pre>
+<pre><code>## [1] &quot;date&quot;</code></pre>
+<pre class="r"><code>guess_parser(&quot;15:01&quot;)</code></pre>
+<pre><code>## [1] &quot;time&quot;</code></pre>
+<pre class="r"><code>guess_parser(c(&quot;TRUE&quot;, &quot;FALSE&quot;))</code></pre>
+<pre><code>## [1] &quot;logical&quot;</code></pre>
+<pre class="r"><code>guess_parser(c(&quot;1&quot;, &quot;5&quot;, &quot;9&quot;))</code></pre>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<pre class="r"><code>guess_parser(c(&quot;12,352,561&quot;))</code></pre>
+<pre><code>## [1] &quot;number&quot;</code></pre>
+<pre class="r"><code>str(parse_guess(&quot;2010-10-10&quot;))</code></pre>
+<pre><code>##  Date[1:1], format: &quot;2010-10-10&quot;</code></pre>
+<p>이 휴리스틱 방법은 다음 유형들을 각각 시도하여 일치하는 항묵을 찾으면 멈춘다.</p>
+<ul>
+<li><dl>
+<dt>논리형</dt>
+<dd>‘F’,‘T’,‘FALSE’,‘TRUE’만 포함.
+</dd>
+</dl></li>
+<li><dl>
+<dt>정수형</dt>
+<dd>수치형 문자(와-)만 포함.
+</dd>
+</dl></li>
+<li><dl>
+<dt>더블형</dt>
+<dd>(4.5e-5와 같은 숫자를 포함하는) 유효한 더블형만 포함.
+</dd>
+</dl></li>
+<li><dl>
+<dt>수치형</dt>
+<dd>내부에 그룹화 마크가 있는 유효한 더블형을 포함.
+</dd>
+</dl></li>
+<li><dl>
+<dt>타임형</dt>
+<dd>기본 time-format과 일치.
+</dd>
+</dl></li>
+<li><dl>
+<dt>데이트형</dt>
+<dd>기본 date_format과 일치.
+</dd>
+</dl></li>
+<li><dl>
+<dt>데이트-타임형</dt>
+<dd>ISO 8601 날짜.
+</dd>
+</dl></li>
+</ul>
+<p>이러한 규칙 중 어느 것도 적용되지 않으면 해당 열은 문자열 백터로 그대로 남는다.</p>
+</div>
+<div id="문제점" class="section level2">
+<h2><strong>8.4.2 문제점</strong></h2>
+<p>큰 파일의 경우 이러한 기본값이 항상 잘 작동하지는 않는다. 두 가지 문제가 있다.</p>
+<ul>
+<li>처음 1,000행이 특수한 경우이어서 readr이 충분히 일반적이지 않은 유형으로 추측할 수 있다. 예를 들어 첫 번째 1,000개의 행에 정수만 있는 더블형 열이 있을 수 있다.</li>
+<li>열에 결측값이 많이 있을 수 있다. 첫 번째 1,000개의 행에 NA만 있는 경우 readr이 문자형 벡터로 추측했지만, 여러분은 좀 더 구체적으로 파싱하고 싶을 수 있다. readr에는 이러한 두 가지 문제를 모두 보여주는 까다로운 CSV가 포함되어 있다.</li>
+</ul>
+<pre class="r"><code>challenge &lt;- read_csv(readr_example(&quot;challenge.csv&quot;))</code></pre>
+<p>(페키지에 포함된 파일의 경로를 찾아 주는 readr_example()을 사용한 것에 주목하라.) 두 가지가 출력되었다. 첫 번쨰 1,000개의 행을 보고 생성된 열 상세 내용과 첫 다섯 개의 파싱 오류가 그것이다. 발생한 문제들을 problelms()로 명시적으로 추출하여 더 깊이 탐색하는 것은 언제나 좋은 방법이다.</p>
+<pre class="r"><code>problems(challenge)</code></pre>
+<pre><code>## # A tibble: 1,000 x 5
+##      row col   expected        actual   file                                    
+##    &lt;int&gt; &lt;chr&gt; &lt;chr&gt;           &lt;chr&gt;    &lt;chr&gt;                                   
+##  1  1001 y     1/0/T/F/TRUE/F~ 2015-01~ &#39;C:/Program Files/R/R-4.0.2/library/rea~
+##  2  1002 y     1/0/T/F/TRUE/F~ 2018-05~ &#39;C:/Program Files/R/R-4.0.2/library/rea~
+##  3  1003 y     1/0/T/F/TRUE/F~ 2015-09~ &#39;C:/Program Files/R/R-4.0.2/library/rea~
+##  4  1004 y     1/0/T/F/TRUE/F~ 2012-11~ &#39;C:/Program Files/R/R-4.0.2/library/rea~
+##  5  1005 y     1/0/T/F/TRUE/F~ 2020-01~ &#39;C:/Program Files/R/R-4.0.2/library/rea~
+##  6  1006 y     1/0/T/F/TRUE/F~ 2016-04~ &#39;C:/Program Files/R/R-4.0.2/library/rea~
+##  7  1007 y     1/0/T/F/TRUE/F~ 2011-05~ &#39;C:/Program Files/R/R-4.0.2/library/rea~
+##  8  1008 y     1/0/T/F/TRUE/F~ 2020-07~ &#39;C:/Program Files/R/R-4.0.2/library/rea~
+##  9  1009 y     1/0/T/F/TRUE/F~ 2011-04~ &#39;C:/Program Files/R/R-4.0.2/library/rea~
+## 10  1010 y     1/0/T/F/TRUE/F~ 2010-05~ &#39;C:/Program Files/R/R-4.0.2/library/rea~
+## # ... with 990 more rows</code></pre>
+<p>문제가 남아있지 않을 때까지 열 단위로 작업하는 것은 좋은 전략이다. x 열에 파싱 문제가 많다는 것을 알 수 있다. 정수값 다음에 따라오는 문자가 있었던 것이다. 이는 더블형 파서를 사용해야 함을 암시한다. 이 호출을 수정하기 위해 먼저 열 사양을 복사하여 원래 호출에 붙여 넣어보라.</p>
+<pre class="r"><code>challenge &lt;- read_csv(
+  readr_example(&quot;challenge.csv&quot;),
+  col_types = cols(
+    x = col_integer(),
+    y = col_character()
+  )
+)</code></pre>
+<p>그런 다음 x 열의 유형을 조정할 수 있다.</p>
+<pre class="r"><code>install.packages(&quot;readr&quot;)
+library(readr)
+challenge &lt;- read_csv(
+  readr_example(&quot;challenge.csv&quot;),
+  col_types = cols(
+    x = col_double(),
+    y = col_character()
+  )
+)</code></pre>
+<p>첫 번째 문제는 해결되었지만, 마지막 몇 행을 보면 날짜가 문자형 백터로 저장 되었다.</p>
+<pre class="r"><code>tail(challenge)</code></pre>
+<pre><code>## # A tibble: 6 x 2
+##       x y         
+##   &lt;dbl&gt; &lt;chr&gt;     
+## 1 0.805 2019-11-21
+## 2 0.164 2018-03-29
+## 3 0.472 2014-08-04
+## 4 0.718 2015-08-16
+## 5 0.270 2020-02-04
+## 6 0.608 2019-01-06</code></pre>
+<p>y 열을 데이트형으로 성정하여, 이를 수정할 수 있다.</p>
+<pre class="r"><code>challenge &lt;- read_csv(
+  readr_example(&quot;challenge.csv&quot;),
+  col_types = cols(
+    x = col_double(),
+    y = col_date()
+  )
+)</code></pre>
+<pre class="r"><code>tail(challenge)</code></pre>
+<pre><code>## # A tibble: 6 x 2
+##       x y         
+##   &lt;dbl&gt; &lt;date&gt;    
+## 1 0.805 2019-11-21
+## 2 0.164 2018-03-29
+## 3 0.472 2014-08-04
+## 4 0.718 2015-08-16
+## 5 0.270 2020-02-04
+## 6 0.608 2019-01-06</code></pre>
+<ins>
+<font size="2">(tail = 벡터, 행렬, 테이블, 데이터 프레임 또는 함수의 처음 또는 마지막 부분을 반환합니다.)</font>
+</ins>
+<p>모든 parse_xyz() 함수는 해당하는 col_xyz() 함수를 가지고 있다. 데이터가 이미 R의 문자형 벡터인 경우에는 parse_xyz()를 사용하면 되고, readr이 데이터를 불러오는 방법을 설정할 경우에는 col_xyz()사용하면 된다. col_typers를 항상 설정하여 readr이 생성하는 출력물로부터 만들어 나가는 것을 강력히 추천한다. 이렇게 하면 일관되고 재현할 수 있는 데이터 불러오기 스크립트를 갖게 된다. 기본값으로 추측하여 데이터를 읽는다면 데이터 변경 시 readr은 과거 설정으로 읽게 될 것이다. 정말로 엄격하게 하고 싶다면 stop_for-problems()를 사용하라. 파싱 문제가 생기면 오류를 내며 스크립트를 중단할 것이다.</p>
+</div>
+<div id="기타-전략" class="section level2">
+<h2><strong>8.4.3 기타 전략</strong></h2>
+<p>파일을 파싱하는데 도움이 되는 몇가지 일반적인 전략이 있다.</p>
+<ul>
+<li>앞의 예제에서 우리는 단지 운이 없었다. 즉, 기본값보다 한 행만 더 살펴보자면 한 번에 정확하게 파싱할 수 있다.</li>
+</ul>
+<pre class="r"><code>challenge2 &lt;- read_csv(
+  readr_example(&quot;challenge.csv&quot;),
+  guess_max = 1001
+)</code></pre>
+<pre class="r"><code>challenge2</code></pre>
+<pre><code>## # A tibble: 2,000 x 2
+##        x y         
+##    &lt;dbl&gt; &lt;date&gt;    
+##  1   404 NA        
+##  2  4172 NA        
+##  3  3004 NA        
+##  4   787 NA        
+##  5    37 NA        
+##  6  2332 NA        
+##  7  2489 NA        
+##  8  1449 NA        
+##  9  3665 NA        
+## 10  3863 NA        
+## # ... with 1,990 more rows</code></pre>
+<ul>
+<li>모든 열을 문자형 벡터로 읽으면 문제를 쉽게 진단할 수 있는 경우가 많다.</li>
+</ul>
+<p>challenge &lt;- read_csv(readr_example(“challenge.csv”), col_types = cols(.default = col_character()))</p>
+<p>이 방법은 type_convert()와 함께 사용하면 특히 유용한데, 이 함수는 휴리스틱한 파싱 방법을 데이터프레임의 문자형 열에 적용한다. <ins><font size="2">(휴리스틱 : 시간이나 정보가 불충분하여 합리적인 판단을 할 수 없거나, 굳이 체계적이고 합리적인 판단을 할 필요가 없는 상황에서 신속하게 사용하는 어림짐작의 기술)</font></ins></p>
+<pre class="r"><code>df &lt;- tribble(
+  ~x, ~y,
+  &quot;1&quot;, &quot;1.21&quot;,
+  &quot;2&quot;, &quot;2.32&quot;,
+  &quot;3&quot;, &quot;4.56&quot;
+)</code></pre>
+<pre class="r"><code>type_convert(df)</code></pre>
+<pre><code>## # A tibble: 3 x 2
+##       x     y
+##   &lt;dbl&gt; &lt;dbl&gt;
+## 1     1  1.21
+## 2     2  2.32
+## 3     3  4.56</code></pre>
+<ul>
+<li>매우 큰 파일을 읽는 경우, n_max를 10,000 또는 100,000과 같이 작은 숫자로 설정할 수 있다. 이렇게 하면 일반적인 문제를 해결하는 동시에 반복작업을 가속화할 수 있다.</li>
+<li>파싱에 중대한 문제가 있는 경우에는 read_file()을 이용하여 길이가 1인 문자형 벡터로 읽는 것이 더 쉬울 수 있다. 그런 다음 나중에 배울 문자열 파싱 방법을 사용하여 좀 더 특이한 포맷을 파싱하면 된다.</li>
+</ul>
+</div>
+</div>
+<div id="파일에-쓰기" class="section level1">
+<h1><strong>8.5 파일에 쓰기</strong></h1>
+<p>readr에는 디스크에 데이터를 다시 기록하는 데 유용한 함수, write_csv()와 write_tsv()가 있다. 두 함수 모두 다음 동작을 통해 출력 파일이 올바르게 다시 읽힐 수 있게 한다. - 항상 UTF-8로 문자열을 인코딩한다. - 데이트형과 데이터-타임형을 ISO 8601 형식으로 저장하여 어디에서든 쉽게 파싱될 수 있게 한다.</p>
+<p>CSV 파일을 엑셀로 내보내려면 write_excel_csv()를 사용하라. 이는 파일의 시작 부분에 특수 문자(‘byte order mark’)를 작성하여, UTF-8 인코딩을 사용하고 있음을 엑셀에 전달한다. 가장 중용한 인수는 x(저장할 데이터프레임)와 path(그 데이터프레임을 저장할 위치)이다. 결측값을 지정하는 방법을 위한 인수, na와 기존 파일에 첨부할지를 지정하는 인수, append도 있다.</p>
+<pre class="r"><code>write_csv(challenge, &quot;challenge.csv&quot;)</code></pre>
+<p><code>CSV로 저장하면 유형 정보가 없어진다는 것에 유의하라.</code></p>
+<pre class="r"><code>challenge</code></pre>
+<pre><code>## # A tibble: 2,000 x 2
+##        x y         
+##    &lt;dbl&gt; &lt;date&gt;    
+##  1   404 NA        
+##  2  4172 NA        
+##  3  3004 NA        
+##  4   787 NA        
+##  5    37 NA        
+##  6  2332 NA        
+##  7  2489 NA        
+##  8  1449 NA        
+##  9  3665 NA        
+## 10  3863 NA        
+## # ... with 1,990 more rows</code></pre>
+<pre class="r"><code>write_csv(challenge, &quot;challenge-2.csv&quot;)</code></pre>
+<pre class="r"><code>read_csv(&quot;challenge-2.csv&quot;)</code></pre>
+<pre><code>## # A tibble: 2,000 x 2
+##        x y    
+##    &lt;dbl&gt; &lt;lgl&gt;
+##  1   404 NA   
+##  2  4172 NA   
+##  3  3004 NA   
+##  4   787 NA   
+##  5    37 NA   
+##  6  2332 NA   
+##  7  2489 NA   
+##  8  1449 NA   
+##  9  3665 NA   
+## 10  3863 NA   
+## # ... with 1,990 more rows</code></pre>
+<p>이런 이유로 중간 결과를 캐싱하기에 CSV를 아주 신뢰할 수 없다. 불러올 때마다 열 사양을 다시 만들어야 한다. 두 가지 대안이 있다.</p>
+<ul>
+<li>write_rds()와 read_rds()는 베이스 함수인 readRDS()와 saveRDS()의 래퍼 함수들이다. 이들은 RDS라는 R의 커스텀 바이너리 형식으로 데이터를 저장한다.</li>
+</ul>
+<pre class="r"><code>write_rds(challenge, &quot;challenge.rds&quot;)</code></pre>
+<pre class="r"><code>read_rds(&quot;challenge.rds&quot;)</code></pre>
+<pre><code>## # A tibble: 2,000 x 2
+##    x     y    
+##    &lt;chr&gt; &lt;chr&gt;
+##  1 404   &lt;NA&gt; 
+##  2 4172  &lt;NA&gt; 
+##  3 3004  &lt;NA&gt; 
+##  4 787   &lt;NA&gt; 
+##  5 37    &lt;NA&gt; 
+##  6 2332  &lt;NA&gt; 
+##  7 2489  &lt;NA&gt; 
+##  8 1449  &lt;NA&gt; 
+##  9 3665  &lt;NA&gt; 
+## 10 3863  &lt;NA&gt; 
+## # ... with 1,990 more rows</code></pre>
+<ul>
+<li>feather 패키지는 다른 프로그래밍 언어와 공유할 수 있는 빠른 바이너리 파일 형식을 구현한다.</li>
+</ul>
+<pre class="r"><code>library(feather)
+write_feather(challenge, &quot;challeng.feather&quot;)</code></pre>
+<pre class="r"><code>library(feather)
+read_feather(&quot;challenge.feather&quot;)</code></pre>
+<pre><code>## # A tibble: 2,000 x 2
+##    x     y    
+##    &lt;chr&gt; &lt;chr&gt;
+##  1 404   &lt;NA&gt; 
+##  2 4172  &lt;NA&gt; 
+##  3 3004  &lt;NA&gt; 
+##  4 787   &lt;NA&gt; 
+##  5 37    &lt;NA&gt; 
+##  6 2332  &lt;NA&gt; 
+##  7 2489  &lt;NA&gt; 
+##  8 1449  &lt;NA&gt; 
+##  9 3665  &lt;NA&gt; 
+## 10 3863  &lt;NA&gt; 
+## # ... with 1,990 more rows</code></pre>
+<p>feather는 RDS보다 대체적으로 빠르며 R 외부에서도 사용할 수 있다. RDS는 리스트-열(20장에서 배울 것이다)을 지원하지만 feather는 현재 지원하지 않는다.</p>
+</div>
+<div id="기타-데이터-유형" class="section level1">
+<h1><strong>8.6 기타 데이터 유형</strong></h1>
+<p>다른 유형의 데이터를 R로 불러오려면 다음에 나열된 tidyverse 패키지로 시작하는 것이 좋다. 이 패키지들은 완벽하지는 않지만 이들부터 시작하면 좋다. 직사각형 데이터에 대해 다음 패키지들이 있다.</p>
+<ul>
+<li>haven은 SPSS, Stata, SAS 파일을 읽을 수 있다.</li>
+<li>readxl은 엑셀 파일(.xls와 .xlsx)을 읽을 수 있다.</li>
+<li>DBI를 데이터베이스 특화 백엔드(예: RMySQL, RSQLite, RPostgreSQL 등)와 함께 사용하면 데이터베이스에 대해 SQL 쿼리를 실행하고 데이터프레임을 반환할 수 있다.</li>
+</ul>
+<p>계층적 데이터의 경우, JSON에는 예룬 움스(Jeroen Ooms)가 개발한 jsonlite를 사용하고 XML에는 xml2를 사용하면 된다. 이에 관한 좋은 예제는 제니 브라이언(Jennt Bryan)의 <a href="https://jennybc.github.io/purrr-tutorial에서" class="uri">https://jennybc.github.io/purrr-tutorial에서</a> 볼 수 있다. 다른 파일 유형의 경우, R데이터 불러오기/내보내기 매뉴얼과 rio패키지를 참고해보라</p>
 </div>
 
 
