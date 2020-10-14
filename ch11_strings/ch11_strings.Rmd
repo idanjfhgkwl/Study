@@ -1,7 +1,10 @@
 ---
 title: "ch11 Strings"
 author: "JustY"
-output: html_document
+output:
+  html_document:
+    toc: true
+    toc_float: true
 ---
 
 ```{r setup, include=FALSE}
