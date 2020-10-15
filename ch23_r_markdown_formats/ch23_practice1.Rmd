@@ -1,6 +1,6 @@
 ---
 title: "23. Practice1_R Markdown formats"
-author: "ne_choi"
+author: "JustY"
 date: '2020 10 13 '
 output:
   html_document:
