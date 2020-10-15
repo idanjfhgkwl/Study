@@ -8,3 +8,5 @@ git commit -m "1st commit"
 
 2020.10.05
 2장까지 업로드
+
+git pull 되냐?
