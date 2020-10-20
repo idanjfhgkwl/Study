@@ -114,9 +114,12 @@ mcorp_nn %>%
     title="구매수 변화 희미하다",
     caption="출처: 엠코퍼레이션",
     y="평균 구매수"
-  )
+  ) +
+  geom_vline(xintercept = as.Date("2020-02-17",  format = "%Y-%m-%d"), linetype = 'dotted', color = 'blue')
 
-# 
+# 샘플링 예제
+# 단 산점도를 시각화할 때 유의점이 있다. 데이터가 크기 때문에 시각화 구현에 시간이 소요된다.
+# 이 때 필요한 방법론이 샘플링이다.
 
 mcorp_sp <- sample_n(mcorp, 10000)
 

@@ -93,16 +93,16 @@ cat_rev <- shinhancard %>%
   arrange(desc(mean)) 
 
 substr(shinhancard$일별, 1, 7)
-y <- cbind(shinhancard, month = substr(shinhancard$일별, 1, 7))
-head(y)
-glimpse(y)
+shinhan_month <- cbind(shinhancard, month = substr(shinhancard$일별, 1, 7))
+head(shinhan_month)
+glimpse(shinhan_month)
 
-dcast(y, month ~ ., value.var = "카드이용건수(천건)", mean)
+dcast(shinhan_month, month ~ ., value.var = "카드이용건수(천건)", mean)
 
 #
 
-temp <- dcast(y, month ~ 업종, value.var = "카드이용건수(천건)", mean)
-head(temp)
+shinhan_covid <- dcast(shinhan_month, month ~ 업종, value.var = "카드이용건수(천건)", mean)
+head(shinhan_covid)
 
 # [R 데이터 분석,시각화] 한국복지패널 데이터 분석 실습 무작정 따라하기
 # https://blog.itpaper.co.kr/rdata-%ED%95%9C%EA%B5%AD%EB%B3%B5%EC%A7%80%ED%8C%A8%EB%84%90/
@@ -110,7 +110,7 @@ head(temp)
 # 연령층 구분
 
 colSums(is.na(y))
-temp <- y %>% mutate(
+shinhan_covid <- shinhan_month %>% mutate(
   코로나 = case_when(
     일별 >= "2019-02-01" & 일별 < "2019-05-01"  ~ "2019",
     일별 >= "2020-02-01" & 일별 < "2020-05-01"  ~ "2020",
@@ -118,36 +118,124 @@ temp <- y %>% mutate(
 
 # 지역과 연령층에 대한 그룹분석
 
-temp2 = temp %>%
-  group_by(month, 업종, 코로나) %>%
-  #summarise(평균 = mean(`카드이용건수(천건)`)) %>%
-  filter((코로나 == 2019 | 코로나 == 2020))
+#shinhan_covid_group = shinhan_covid %>%
+#  group_by(month, 업종, 코로나) %>%
+#  #summarise(평균 = mean(`카드이용건수(천건)`)) %>%
+#  filter((코로나 == 2019 | 코로나 == 2020))
 
 # 분석결과를 피벗테이블로 구성
 
-temp_pv <- dcast(temp2, 코로나 ~ 업종, value.var="카드이용건수(천건)", mean)
-temp_pv
+shinhan_covid_group_pv <- dcast(shinhan_covid_group, 코로나 ~ 업종, value.var="카드이용건수(천건)", mean)
+rm(shinhan_covid_group_pv)
 
 # 각 지역별 연령층 분포 비교
 
-temp2 %>%
+shinhan_covid %>%
+  group_by(월별, 업종번호, 업종명, 코로나) %>%
   summarise(평균 = mean(`카드이용건수(천건)`)) %>%
   #filter(업종 == "M001_한식" | 업종 == "M002_일식/중식/양식" | 업종 == "M003_제과/커피/패스트푸드" | 업종 == "M004_기타요식") %>%
-  filter(업종 == "M004_기타요식") %>%
-  ggplot(aes(x = 업종, y = 평균, fill = 코로나)) +
-  geom_col(aes(x = 업종, y = 평균, fill = 코로나), position='dodge')+
+  filter((코로나 == 2019 | 코로나 == 2020) & 업종번호 == "M004") %>%
+  ggplot(aes(x = 업종명, y = 평균, fill = 코로나)) +
+  geom_col(aes(x = 업종명, y = 평균, fill = 코로나), position='dodge')+
   geom_bar(stat="identity", position = "dodge", width=.5) + 
   #geom_text(aes(label = 평균),
   #          position = position_dodge(width=1.8),
   #          vjust=-0.5) +
-  theme(axis.text.x = element_text(angle=65, vjust=0.6)) + 
+  #theme(axis.text.x = element_text(angle=65, vjust=0.6)) + 
   coord_cartesian(ylim = c(200, 350)) +
-  labs(title = "M004_기타요식(오프라인) 카드이용건수가 줄었다.", 
+  labs(title = "기타요식(오프라인) 카드이용건수가 줄었다.", 
        subtitle = "비교: 2019년 2~4월 vs 2020년 2~4월", 
        caption = "출처: 신한카드")
 
 # 29. R의 시각화(그래프) 기능(11) - ggplot2 사용법(기타 : 범례, 레이블, 텍스트 추가 등) https://blog.naver.com/definitice/221162502291
 # 최대한 친절하게 쓴 R로 그래프 그리기(feat. ggplot2) https://kuduz.tistory.com/1077
 
+# 연령별, 성별도 구분해보자.
 
+shinhan_cat <- shinhan_month %>%
+  separate(업종, into = c("업종번호", "업종명"), sep = "_")
 
+shinhan_covid <- shinhan_cat %>% mutate(
+  코로나 = case_when(
+    일별 >= "2019-02-01" & 일별 < "2019-05-01"  ~ "2019",
+    일별 >= "2020-02-01" & 일별 < "2020-05-01"  ~ "2020",
+    TRUE ~ "기타"))
+
+head(shinhan_covid)
+rm(shinhan_month)
+
+shinhan_covid <- shinhan_covid %>%
+  rename("월별" = month)
+
+shinhan_covid %>%  
+  group_by(일별, 연령대별) %>% 
+  summarise(평균 = mean(`카드이용건수(천건)`)) %>% 
+  ggplot(aes(x=일별)) + 
+  geom_line(aes(y=평균, colour = 연령대별)) + 
+  labs(title="Time Series Chart", 
+       subtitle="Avg. Sales from 'Shinhan Card' Dataset", 
+       caption="Source: Shinhan Card", 
+       y="Avg. Sales (1000)")
+
+# 변형
+
+shinhan_covid %>%  
+  group_by(일별, 성별, 연령대별, 업종번호, 월별, 코로나) %>%
+  filter() %>%
+  summarise(평균 = mean(`카드이용건수(천건)`)) %>% 
+  ggplot(aes(x=일별)) + 
+  geom_line(aes(y=평균, colour = 연령대별)) + 
+  labs(title="Time Series Chart", 
+       subtitle="Avg. Sales from 'Shinhan Card' Dataset", 
+       caption="Source: Shinhan Card", 
+       y="Avg. Sales (1000)")
+
+# 
+
+mcorp_sample <- sample_n(mcorp_nn, 10000)
+
+ggplot(data = mcorp_sample) +
+  scale_x_log10() + 
+  scale_y_log10() + 
+  geom_point(mapping = aes(x = 구매수, y = 구매금액))
+
+head(mcorp_nn)
+
+mcorp_select <- mcorp_nn[mcorp_nn$카테고리명 %in% c("가공식품", "농축수산물"), ]
+head(mcorp_select)
+
+theme_set(theme_bw())  # pre-set the bw theme.
+
+mcorp_select %>%
+  ggplot(aes(구매금액, 구매수)) +
+  geom_jitter(aes(col = 카테고리명, size = 고객나이)) +
+  geom_smooth(aes(col = 카테고리명), method = "lm", se = F) +
+  labs(subtitle="mpg: Displacement vs City Mileage",
+       title="Bubble chart")
+
+?economics
+head(economics)
+
+library(ggplot2)
+library(lubridate)
+theme_set(theme_bw())
+
+economics_m <- economics[1:24, ]
+
+# labels and breaks for X axis text
+lbls <- paste0(month.abb[month(economics_m$date)], " ", lubridate::year(economics_m$date))
+brks <- economics_m$date
+
+?economics
+
+# plot
+ggplot(economics_m, aes(x=date)) + 
+  geom_line(aes(y=returns_perc)) + 
+  labs(title="Monthly Time Series", 
+       subtitle="Returns Percentage from Economics Dataset", 
+       caption="Source: Economics", 
+       y="Returns %") +  # title and caption
+  scale_x_date(labels = lbls, 
+               breaks = brks) +  # change to monthly ticks and labels
+  theme(axis.text.x = element_text(angle = 90, vjust=0.5),  # rotate x axis text
+        panel.grid.minor = element_blank())  # turn off minor grid

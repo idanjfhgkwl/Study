@@ -123,10 +123,9 @@ shinhan_afco %>%
 
 glimpse(shinhan_afco)
 
-
-
-
 rm(samsung_card)
+
+# 
 
 
 
