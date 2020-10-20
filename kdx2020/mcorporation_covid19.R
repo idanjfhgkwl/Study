@@ -132,4 +132,25 @@ ggplot(mcorp_sp, aes(x = 구매수, y = 구매금액)) +
        y="구매금액", 
        title="Counts Plot")
 
+#
 
+mcorp_sample <- sample_n(mcorp_nn, 10000)
+
+ggplot(data = mcorp_sample) +
+  scale_x_log10() + 
+  scale_y_log10() + 
+  geom_point(mapping = aes(x = 구매수, y = 구매금액))
+
+head(mcorp_nn)
+
+mcorp_select <- mcorp_nn[mcorp_nn$카테고리명 %in% c("가공식품", "농축수산물"), ]
+head(mcorp_select)
+
+theme_set(theme_bw())  # pre-set the bw theme.
+
+mcorp_select %>%
+  ggplot(aes(구매금액, 구매수)) +
+  geom_jitter(aes(col = 카테고리명, size = 고객나이)) +
+  geom_smooth(aes(col = 카테고리명), method = "lm", se = F) +
+  labs(subtitle="mpg: Displacement vs City Mileage",
+       title="Bubble chart")

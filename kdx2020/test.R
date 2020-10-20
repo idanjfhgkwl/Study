@@ -127,6 +127,111 @@ rm(samsung_card)
 
 # 
 
+install.packages("nycflights13")
+library(nycflights13)
+library(ggplot2)
+nf <- count(flights, year, month, day)
+library(lubridate)
+nf <- mutate(nf, date = make_date(year, month, day))
+library(ggplot2)
+p <- ggplot(nf, aes(date, n)) + geom_line()
+p
+p + facet_wrap(~ wday(date, TRUE)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+monthweek <- function(d, w) ceiling((d - w) / 7) + 1
+nf <- mutate(nf, wd = wday(date, label = TRUE))
+nf <- mutate(nf, wd = factor(wd, levels = rev(levels(wd))))
+nf <- mutate(nf, mw = monthweek(day, wday(date)))
+ggplot(nf, aes(x = as.character(mw), y = wd, fill = n)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient(low = "white") +
+  facet_wrap(~ month(date, TRUE)) +
+  ylab("") + xlab("Week of Month") +
+  theme(panel.grid.major = element_blank())
+nf2 <- mutate(nf, wd = wday(date, label = TRUE))
+nf2 <- mutate(nf2, wd = factor(wd))
+nf2 <- mutate(nf2, mw = factor(monthweek(day, wday(date))))
+nf2 <- mutate(nf2, mw = factor(mw, rev(levels(mw))))
+ggplot(nf2, aes(x = wd, y = mw, fill = n)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient(low = "white") +
+  facet_wrap(~ month(date, TRUE)) +
+  ylab("") + xlab("Week of Month") +
+  theme(panel.grid.major = element_blank(),
+        axis.text.x = element_text(angle = 45, hjust = 1))
+head(nf2)
+
+head(shinhan_temp)
+monthweek <- function(d, w) ceiling((d - w) / 7) + 1
+shinhan_temp <- mutate(shinhan_covid, wd = wday(일별, label = TRUE))
+shinhan_temp <- mutate(shinhan_temp, wd = factor(wd))
+shinhan_temp <- mutate(shinhan_temp, mw = factor(monthweek(day, wday(일별))))
+shinhan_temp <- mutate(shinhan_temp, mw = factor(mw, rev(levels(mw))))
+nf <- count(flights, year, month, day)
+glimpse(shinhan_temp)
+shinhan_temp %>%
+  group_by(일별, 업종번호, `카드이용건수(천건)`, 코로나, wd, mw) %>%
+  filter(업종번호 == "M001") %>%
+  ggplot(aes(x = wd, y = mw, fill = `카드이용건수(천건)`)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient(low = "white") +
+  facet_wrap(~ month(일별, TRUE)) +
+  ylab("") + xlab("Week of Month") +
+  theme(panel.grid.major = element_blank(),
+        axis.text.x = element_text(angle = 0, hjust = 1))
+
+shinhan_temp %>%
+  select(일별, 업종번호, `카드이용건수(천건)`, 코로나, wd, mw)
+  group_by(일별, 업종번호, `카드이용건수(천건)`, 코로나, wd, mw) %>%
+  filter(업종번호 == "M001" & (코로나 == 2019 | 코로나 == 2020))
 
 
+rm(monthweek)
 
+rm(shinhan_temp)
+
+#
+
+install.packages("ggcharts")
+library(dplyr)
+library(ggplot2)
+library(ggcharts)
+install.packages("tidytext")
+library(tidytext)
+data("biomedicalrevenue")
+
+biomedicalrevenue %>%
+  filter(year %in% c(2012, 2015, 2018)) %>%
+  bar_chart(x = company, y = revenue, facet = year, top_n = 10)
+
+shinhan_covid_pv %>%
+  filter(코로나 %in% c(2019, 2020)) %>%
+  bar_chart(x = 업종번호, y = `카드이용건수(천건)`, facet = 코로나, top_n = 10)
+
+head(biomedicalrevenue)
+head(shinhan_covid)
+head(shinhan_covid_pv)
+glimpse(shinhan_covid_pv)
+
+shinhan_covid_pv <- dcast(shinhan_covid, 코로나 ~ 업종번호, value.var="카드이용건수(천건)", mean)
+rm(biomedicalrevenue)
+
+#
+
+data("revenue_wide")
+library(ggcharts)
+line_chart(data = shinhan_covid, x = year(일별), y = `카드이용건수(천건)`)
+
+pyramid_chart(data = popch, x = age, y = pop, group = sex)
+library(dplyr, warn.conflicts = FALSE)
+
+pyramid_chart(
+  data,
+  x,
+  y,
+  group,
+  bar_colors = c("#1F77B4", "#FF7F0E"),
+  sort = "no",
+  xlab = NULL,
+  title = NULL
+)

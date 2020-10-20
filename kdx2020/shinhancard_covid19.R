@@ -192,50 +192,8 @@ shinhan_covid %>%
 
 # 
 
-mcorp_sample <- sample_n(mcorp_nn, 10000)
 
-ggplot(data = mcorp_sample) +
-  scale_x_log10() + 
-  scale_y_log10() + 
-  geom_point(mapping = aes(x = 구매수, y = 구매금액))
 
-head(mcorp_nn)
 
-mcorp_select <- mcorp_nn[mcorp_nn$카테고리명 %in% c("가공식품", "농축수산물"), ]
-head(mcorp_select)
 
-theme_set(theme_bw())  # pre-set the bw theme.
 
-mcorp_select %>%
-  ggplot(aes(구매금액, 구매수)) +
-  geom_jitter(aes(col = 카테고리명, size = 고객나이)) +
-  geom_smooth(aes(col = 카테고리명), method = "lm", se = F) +
-  labs(subtitle="mpg: Displacement vs City Mileage",
-       title="Bubble chart")
-
-?economics
-head(economics)
-
-library(ggplot2)
-library(lubridate)
-theme_set(theme_bw())
-
-economics_m <- economics[1:24, ]
-
-# labels and breaks for X axis text
-lbls <- paste0(month.abb[month(economics_m$date)], " ", lubridate::year(economics_m$date))
-brks <- economics_m$date
-
-?economics
-
-# plot
-ggplot(economics_m, aes(x=date)) + 
-  geom_line(aes(y=returns_perc)) + 
-  labs(title="Monthly Time Series", 
-       subtitle="Returns Percentage from Economics Dataset", 
-       caption="Source: Economics", 
-       y="Returns %") +  # title and caption
-  scale_x_date(labels = lbls, 
-               breaks = brks) +  # change to monthly ticks and labels
-  theme(axis.text.x = element_text(angle = 90, vjust=0.5),  # rotate x axis text
-        panel.grid.minor = element_blank())  # turn off minor grid
