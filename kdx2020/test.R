@@ -235,3 +235,22 @@ pyramid_chart(
   xlab = NULL,
   title = NULL
 )
+
+#
+
+head(mcorp_nn[2:8], n = 10)
+
+mcorp %>%
+  group_by(카테고리명) %>%
+  summarise(mean(구매수)) %>%
+  
+shinhancard %>%
+  group_by(성별) %>%
+  summarise(mean(`카드이용건수(천건)`)) %>%
+
+glimpse(mcorp)
+
+sort(category_list)
+category_list
+
+
