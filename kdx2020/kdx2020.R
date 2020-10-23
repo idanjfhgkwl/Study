@@ -247,6 +247,13 @@ shinhancard %>%
   filter(일별 == "2019-01-01") %>% 
   dim()
 
+ggplot(shinhancard, aes(x=일별)) + 
+  geom_line(aes(y=`카드이용건수(천건)`)) + 
+  labs(title="Time Series Chart", 
+       subtitle="Returns Percentage from 'Economics' Dataset", 
+       caption="Source: Economics", 
+       y="Returns %")
+
 shinhancard %>% 
   rename(date = "일별") %>% 
   group_by(date) %>% 
@@ -281,19 +288,6 @@ shinhancard %>%
        subtitle="Avg. Sales from 'Shinhan Card' Dataset", 
        caption="Source: Shinhan Card", 
        y="Avg. Sales (1000)")
-
-shinhancard %>% 
-  rename(date = "일별") %>%  
-  group_by(date, 성별) %>% 
-  summarise(mean = mean(`카드이용건수(천건)`)) %>% 
-  ggplot(aes(x=date)) + 
-  geom_line(aes(y=mean, colour = 성별)) + 
-  labs(title="Time Series Chart", 
-       subtitle="Avg. Sales from 'Shinhan Card' Dataset", 
-       caption="Source: Shinhan Card", 
-       y="Avg. Sales (1000)")
-
-
 
 
 
